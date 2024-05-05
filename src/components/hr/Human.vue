@@ -27,7 +27,12 @@ const images  = ref([
               color: white;
            `">
           <div class="overlay">
-            <a :href="image.src" target="_blank">{{image.title}}</a>
+            <a :href="image.src" target="_blank">
+              <span class="title">{{image.title}}</span>
+              <span>SOURCE: <span class="source">{{image.source}}</span></span>
+              <span class="linkout">Read More...</span>
+
+            </a>
           </div>
         </div>
       </div>
@@ -69,11 +74,11 @@ const images  = ref([
     .gallery-item {
       position: relative;
 
-
       a {
         color: white;
         background: transparent;
         display: flex;
+        flex-direction: column;
         width: 100%;
         height: 100%;
         justify-content: center;
@@ -89,6 +94,15 @@ const images  = ref([
       height: 100%;
       width: 100%;
       text-align: center;
+
+      .title {
+        font-weight: 600;
+      }
+
+      .linkout {
+        font-weight: 400;
+        text-decoration: underline;
+      }
     }
 
     .overlay:hover {

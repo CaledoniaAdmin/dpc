@@ -6,7 +6,8 @@ export default [
         backgroundImg: 'public/assets/trade/tyler-casey-CkZF0-etxU8-unsplash.jpg',
         height: 100,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'GlobalTradeMag'
     },
     {
         id: 1,
@@ -15,7 +16,8 @@ export default [
         backgroundImg: 'public/assets/trade/robbi-SETfbn-7wJ8-unsplash.jpg',
         height: 210,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'FoodLogistics'
     },
     {
         id: 2,
@@ -24,7 +26,8 @@ export default [
         backgroundImg: 'public/assets/trade/nathan-cima-vG5akutNqCM-unsplash.jpg',
         height: 320,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'Yahoo Finance'
     },
     {
         id: 3,
@@ -33,7 +36,8 @@ export default [
         backgroundImg: 'public/assets/trade/ian-taylor-jOqJbvo1P9g-unsplash.jpg',
         height: 100,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'CNBC'
     },
     {
         id: 4,
@@ -42,7 +46,8 @@ export default [
         backgroundImg: 'public/assets/trade/habib-ayoade-uWfOa8brybM-unsplash.jpg',
         height: 210,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'Law360'
     },
     {
         id: 5,
@@ -51,6 +56,7 @@ export default [
         backgroundImg: 'public/assets/trade/sean-ferigan-ZyKASePDCmM-unsplash.jpg',
         height: 100,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'CNBC'
     }
 ]
