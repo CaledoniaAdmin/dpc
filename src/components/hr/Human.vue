@@ -29,7 +29,7 @@ const images  = ref([
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>
-              <span>SOURCE: <span class="source">{{image.source}}</span></span>
+              <span>source: <span class="source">{{image.source}}</span></span>
               <span class="linkout">Read More...</span>
 
             </a>
@@ -107,6 +107,7 @@ const images  = ref([
 
     .overlay:hover {
       opacity: 0.7;
+      box-shadow:  2px 1px 6px 0px #949494;
     }
 
     .gallery-item-0 {
