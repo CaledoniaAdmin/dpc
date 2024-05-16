@@ -2,18 +2,13 @@
 import {onMounted} from "vue";
 import ipData from '../../data/ip.ts'
 
-
 const props = defineProps(['height', 'width', 'scrollHash'])
 
 onMounted(() => {
-  console.log('Human page mounted: ', props)
-
-  // I know the height of the screen and how many sections
+  console.log('Intellectual page mounted: ', props)
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log('entry: ', entry)
-
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       } else {
@@ -24,22 +19,13 @@ onMounted(() => {
 
   const pageElementArr = Array.from(document.querySelectorAll('.column'))
 
-  console.log('pageElementArr: ', pageElementArr)
-
   pageElementArr.forEach((el:any) => observer.observe(el))
 
-  console.log('width/height: ', props.width.value, props.height.value, pageElementArr.length)
-
   const hash = pageElementArr.reduce((acc, value, idx) => {
-    console.log('acc/post/idx: ', idx)
-
     return {...acc, [idx]: idx * Number(props.height.value) || 0}
   })
 
   props.scrollHash.value = hash
-
-  console.log('scrollHash: ', props.scrollHash.value)
-
 })
 </script>
 
@@ -47,7 +33,7 @@ onMounted(() => {
   <span>IP</span>
   <div class="main">
     <div class="column-container">
-      <div v-for="(image, idx) in ipData" class="column"  :key="image.id">
+      <div v-for="(image) in ipData" class="column"  :key="image.id">
         <div :style="
 `              background: url(${image.backgroundImg}), linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
               background-size: cover;
@@ -55,8 +41,9 @@ onMounted(() => {
               background-position: center;
                       height: 100%;
                       width: 100%;
-                      opacity: 1;`
-">{{image.title}}</div>
+                      opacity: 1;`">
+          {{image.title}}
+        </div>
       </div>
     </div>
   </div>
