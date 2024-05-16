@@ -55,7 +55,7 @@ import tradeData from '../../data/trade.ts'
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(150px, auto);
     gap: 10px;
 
     img {
