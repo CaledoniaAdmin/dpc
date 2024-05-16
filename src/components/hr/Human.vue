@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import tradeData from '../../data/trade.ts'
+import humanData from '../../data/human.ts'
 
 </script>
 
 <template>
   <div class="main" >
     <div class="gallery">
-      <div v-for="(image, idx) in tradeData" :class="`gallery-item gallery-item-${idx} slide-left`" :key="image.id">
+      <div v-for="(image, idx) in humanData" :class="`gallery-item gallery-item-${idx} slide-left`" :key="image.id">
         <div :style=" `
              transition: .5s ease;
               opacity: 1;

@@ -3,40 +3,50 @@ export default [
         id: 0,
         title: 'CAL’s Dean Pinkert calls on US shrimp buyers to investigate their Indian supply chains',
         src: 'https://www.seafoodsource.com/news/environment-sustainability/cal-s-dean-pinkert-calls-on-us-shrimp-buyers-to-investigate-their-indian-supply-chains',
-        backgroundImg: '',
+        backgroundImg: 'public/assets/human/fredrik-ohlander-CbeApl8sxxw-unsplash.jpg',
+        height: 150,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'SeafoodSource'
     },
     {
         id: 1,
         title: 'Seeking Justice: The State of Transnational Corporate Accountability',
         src: 'https://www.yalelawjournal.org/forum/seeking-justice-the-state-of-transnational-corporate-accountability',
-        backgroundImg: '',
+        backgroundImg: 'public/assets/human/mathias-reding-yfXhqAW5X0c-unsplash.jpg',
+        height: 310,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'Yale Law Journal'
     },
     {
         id: 2,
         title: 'Stringency of US Forced Labor Law Is Crucial to Its Success\n',
         src: 'https://sourcingjournal.com/topics/thought-leadership/us-forced-labor-law-china-uflpa-customs-cbp-uyghur-genocide-469337/',
-        backgroundImg: '',
+        backgroundImg: 'public/assets/human/tim-mossholder-ZoiUrv5fi-k-unsplash.jpg',
+        height: 470,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'Sourcing Journal'
     },
     {
         id: 3,
-        title: 'EXPORT CONTROLS AND HUMAN RIGHTS',
-        src: 'https://corpaccountabilitylab.org/calblog/2021/12/21/export-controls-and-human-rights',
-        backgroundImg: '',
+        title: 'Supply Trace is grateful for the insights, expertise and guidance of its multi-stakeholder Advisory Board',
+        src: 'https://info.supplytrace.org/advisory-board/',
+        backgroundImg: 'public/assets/human/adrian-sulyok-sczNLg6rrhQ-unsplash.jpg',
+        height: 150,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'SupplyTrace'
     },
     {
         id: 4,
-        title: 'Supply Trace is grateful for the insights, expertise and guidance of its multi-stakeholder Advisory Board',
-        src: 'https://info.supplytrace.org/advisory-board/',
-        backgroundImg: '',
+        title: 'EXPORT CONTROLS AND HUMAN RIGHTS',
+        src: 'https://corpaccountabilitylab.org/calblog/2021/12/21/export-controls-and-human-rights',
+        backgroundImg: 'public/assets/human/markus-spiske-XXWM_8f77KQ-unsplash.jpg',
+        height: 310,
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'Corporate Accountability Lab'
     }
 ]
