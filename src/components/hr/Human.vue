@@ -163,7 +163,7 @@ pageElementArr.forEach((el:any) => observer.observe(el))
 
   .bg-img {
     opacity: 0;
-    transition: all 2s;
+    transition: all .5s;
   }
 
   .bg-img:hover {
