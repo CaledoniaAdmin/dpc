@@ -5,7 +5,8 @@ export default [
         src: 'https://finance.yahoo.com/video/loyal-china-us-trade-deal-192436486.html',
         backgroundImg: '',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: ''
     },
     {
         id: 1,
@@ -13,7 +14,8 @@ export default [
         src: 'https://brooklynworks.brooklaw.edu/cgi/viewcontent.cgi?article=1533&context=bjil',
         backgroundImg: '',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: ''
     },
     {
         id: 2,
@@ -21,6 +23,7 @@ export default [
         src: 'https://todaysgeneralcounsel.com/whole-of-government-and-corporate-compliance/',
         backgroundImg: '',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: ''
     }
 ]

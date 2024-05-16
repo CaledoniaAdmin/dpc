@@ -1,13 +1,26 @@
 <script setup lang="ts">
 import humanData from '../../data/human.ts'
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show')
+    } else {
+      entry.target.classList.remove('show')
+    }
+  })
+})
+
+const pageElementArr = Array.from(document.querySelectorAll('.bg-img'))
+
+pageElementArr.forEach((el:any) => observer.observe(el))
 </script>
 
 <template>
   <div class="main" >
     <div class="gallery">
       <div v-for="(image, idx) in humanData" :class="`gallery-item gallery-item-${idx} slide-left`" :key="image.id">
-        <div :style=" `
+        <div class="bg-img" :style=" `
              transition: .5s ease;
               opacity: 1;
               position: absolute;
@@ -145,6 +158,21 @@ import humanData from '../../data/human.ts'
       grid-column: 2;
       grid-row: 4;
       animation: 7s slide-left;
+    }
+  }
+
+  .bg-img {
+    opacity: 0;
+    transition: all 2s;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion) {
+    .hidden {
+      transition: none;
     }
   }
 }

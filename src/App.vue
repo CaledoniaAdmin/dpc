@@ -17,13 +17,10 @@ const { width, height } = useWindowSize()
 const scrollHash = ref({}) as object
 
 const handleNavClick = (e: Event) => {
-  console.log('handleNavClick: ', (e.target as HTMLButtonElement).id)
 
   globalState.$patch({
     activeNav: (e.target as HTMLButtonElement).id
   })
-
-  console.log('patched value: ', globalState.$state.activeNav, scrollHash.value)
 
   switch ((e.target as HTMLButtonElement).value) {
     case 'human': {
@@ -69,7 +66,7 @@ onMounted(() => {
   // I know the height of the screen and how many sections
 
   const pageElementArr = Array.from(document.querySelectorAll('.section'))
-
+  
   const hash = pageElementArr.reduce((acc, value, idx) => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
@@ -171,7 +168,7 @@ onMounted(() => {
     .show {
       opacity: 1;
     }
-    
+
     @media (prefers-reduced-motion) {
       .hidden {
         transition: none;
