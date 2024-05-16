@@ -66,7 +66,7 @@ onMounted(() => {
   // I know the height of the screen and how many sections
 
   const pageElementArr = Array.from(document.querySelectorAll('.section'))
-  
+
   const hash = pageElementArr.reduce((acc, value, idx) => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })

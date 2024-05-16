@@ -166,6 +166,10 @@ pageElementArr.forEach((el:any) => observer.observe(el))
     transition: all 2s;
   }
 
+  .bg-img:hover {
+    transform: scale(1.01);
+  }
+
   .show {
     opacity: 1;
   }

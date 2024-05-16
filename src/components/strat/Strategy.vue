@@ -4,9 +4,9 @@ import strategyData from '../../data/strategy.ts'
 </script>
 
 <template>
-  <div class="main">Strategy
-
-    <div class="main" v-for="article in strategyData" :key="article.id">
+  <div class="main">
+    <span>Strategy</span>
+    <div class="card-container" v-for="article in strategyData" :key="article.id">
       <div class="card">{{ article.title }}</div>
     </div>
   </div>
@@ -20,8 +20,12 @@ import strategyData from '../../data/strategy.ts'
   justify-content: space-evenly;
 }
 
+.card-container {
+
+}
+
 .card {
-  height: 200px;
+  height: 350px;
   width: 200px;
 }
 </style>
