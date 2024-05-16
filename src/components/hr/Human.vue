@@ -1,12 +1,5 @@
 <script setup lang="ts">
-import {ref} from "vue";
 import tradeData from '../../data/trade.ts'
-// import humanData from '../../data/human.ts'
-
-const images  = ref([
-  {id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5},
-  {id: 6}, {id: 7}, {id: 8}
-])
 
 </script>
 
