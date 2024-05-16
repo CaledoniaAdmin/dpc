@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 import {onMounted, ref} from "vue";
-import {useScroll} from "@vueuse/core";
 import { useWindowSize } from '@vueuse/core'
 
 import {useGlobalStore} from "./stores/global.ts";
@@ -12,14 +11,8 @@ import Strategy from "./components/strat/Strategy.vue";
 import Trade from "./components/trade/Trade.vue";
 
 const globalState = useGlobalStore()
-// const isActive = ref('human')
 
 const { width, height } = useWindowSize()
-
-const human = ref('human')
-const intellectual = ref('intellectual')
-// const strategy = ref('strategy')
-// const trade = ref('trade')
 
 const scrollHash = ref({}) as object
 
@@ -71,45 +64,22 @@ const handleNavClick = (e: Event) => {
 }
 
 onMounted(() => {
-  console.log('Human page mounted')
+  console.log('App mounted')
 
   // I know the height of the screen and how many sections
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log('entry: ', entry)
-
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show')
-      } else {
-        entry.target.classList.remove('show')
-      }
-    })
-  })
-
   const pageElementArr = Array.from(document.querySelectorAll('.section'))
 
-  console.log('pageElementArr: ', pageElementArr)
-
-  pageElementArr.forEach((el:any) => observer.observe(el))
-
-  console.log('width/height: ', width.value, height.value, pageElementArr.length)
-
   const hash = pageElementArr.reduce((acc, value, idx) => {
-    console.log('acc/post/idx: ', idx)
-
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
 
   scrollHash.value = hash
-
-  console.log('scrollHash: ', scrollHash.value)
-
 })
 </script>
 
 <template>
-  <div class="app-container">
+  <div v-if="width > 600" class="app-container">
     <div class="mast">Dean Pinkert Consulting</div>
     <div class="navbar-container">
       <button value="human" @click="handleNavClick">Human Rights</button>
@@ -127,6 +97,9 @@ onMounted(() => {
     <div class="clients">Client Bar</div>
     <div class="footer">Footer</div>
     <button class="up-btn" value="human" @click="handleNavClick"> UP </button>
+  </div>
+  <div v-else class="app-container">
+    <h1>MOBILE VIEW</h1>
   </div>
 </template>
 
