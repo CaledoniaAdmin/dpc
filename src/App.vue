@@ -21,7 +21,7 @@ const intellectual = ref('intellectual')
 // const strategy = ref('strategy')
 // const trade = ref('trade')
 
-const scrollHash = ref({})
+const scrollHash = ref({}) as object
 
 const handleNavClick = (e: Event) => {
   console.log('handleNavClick: ', (e.target as HTMLButtonElement).id)
@@ -30,7 +30,7 @@ const handleNavClick = (e: Event) => {
     activeNav: (e.target as HTMLButtonElement).id
   })
 
-  console.log('patched value: ', globalState.$state.activeNav, document.querySelector('.human'))
+  console.log('patched value: ', globalState.$state.activeNav, scrollHash.value)
 
   switch ((e.target as HTMLButtonElement).value) {
     case 'human': {
@@ -58,9 +58,9 @@ const handleNavClick = (e: Event) => {
       })
     }
     case 'trade': {
-     console.log('trade')
+     console.log('trade: ', scrollHash.value[3])
      return window.scrollTo({
-        top: scrollHash.value[3],
+        top: scrollHash.value[1] * 3,
         left: 0,
         behavior: "smooth",
       })
@@ -120,7 +120,7 @@ onMounted(() => {
     <br/>
 
     <Human id="human" ref="human" class="section" />
-    <Intellectual id="intellectual" ref="intellectual" class="section"/>
+    <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Strategy id="strategy" class="section"/>
     <Trade id="trade" class="section"/>
     <br />
@@ -188,6 +188,21 @@ onMounted(() => {
       bottom: 0;
       margin-left: 80%;
 
+    }
+
+    .hidden {
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    .show {
+      opacity: 1;
+    }
+    
+    @media (prefers-reduced-motion) {
+      .hidden {
+        transition: none;
+      }
     }
   }
 </style>
