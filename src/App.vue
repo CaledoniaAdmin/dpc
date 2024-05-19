@@ -65,6 +65,16 @@ onMounted(() => {
 
   // I know the height of the screen and how many sections
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show')
+      } else {
+        entry.target.classList.remove('show')
+      }
+    })
+  })
+
   const pageElementArr = Array.from(document.querySelectorAll('.section'))
 
   const hash = pageElementArr.reduce((acc, value, idx) => {
@@ -72,6 +82,9 @@ onMounted(() => {
   })
 
   scrollHash.value = hash
+
+
+  pageElementArr.forEach((el:any) => observer.observe(el))
 })
 </script>
 
@@ -160,17 +173,12 @@ onMounted(() => {
 
     }
 
-    .hidden {
-      opacity: 0;
-      transition: all 1s;
-    }
-
     .show {
       opacity: 1;
     }
 
     @media (prefers-reduced-motion) {
-      .hidden {
+      .section {
         transition: none;
       }
     }

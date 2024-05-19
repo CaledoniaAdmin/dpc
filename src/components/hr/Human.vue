@@ -1,28 +1,26 @@
 <script setup lang="ts">
 import humanData from '../../data/human.ts'
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show')
-    } else {
-      entry.target.classList.remove('show')
-    }
-  })
-})
-
-const pageElementArr = Array.from(document.querySelectorAll('.bg-img'))
-
-pageElementArr.forEach((el:any) => observer.observe(el))
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('show')
+//     } else {
+//       entry.target.classList.remove('show')
+//     }
+//   })
+// })
+//
+// const pageElementArr = Array.from(document.querySelectorAll('.gallery-item'))
+//
+// pageElementArr.forEach((el:any) => observer.observe(el))
 </script>
 
 <template>
   <div class="main" >
     <div class="gallery">
-      <div v-for="(image, idx) in humanData" :class="`gallery-item gallery-item-${idx} slide-left`" :key="image.id">
+      <div v-for="(image, idx) in humanData" :class="`gallery-item gallery-item-${idx}`" :key="image.id">
         <div class="bg-img" :style=" `
-             transition: .5s ease;
-              opacity: 1;
               position: absolute;
               background: url(${image.backgroundImg}), linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
               background-size: cover;
@@ -48,19 +46,6 @@ pageElementArr.forEach((el:any) => observer.observe(el))
 </template>
 
 <style scoped>
-
-/***** Slide Left Animation *****/
-
-@keyframes slide-left {
-  from {
-    margin-left: 100%;
-    opacity: 0;
-  }
-  to {
-    margin-left: 0%;
-    opacity: 1;
-  }
-}
 
 .main {
   height: 100%;
@@ -94,7 +79,7 @@ pageElementArr.forEach((el:any) => observer.observe(el))
     }
 
     .overlay {
-      transition: .5s ease;
+      transition: .6s ease;
       opacity: 0;
       position: absolute;
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
@@ -114,56 +99,44 @@ pageElementArr.forEach((el:any) => observer.observe(el))
 
     .overlay:hover {
       opacity: 0.7;
-      box-shadow:  2px 1px 6px 0px #949494;
+      box-shadow:  2px 1px 6px 0 #949494;
     }
 
     .gallery-item-0 {
       grid-column: 1 / 3;
       grid-row: 1;
-      animation: 1s slide-left;
 
     }
     .gallery-item-1 {
       grid-column: 3;
       grid-row: 1/3;
-      animation: 1.7s slide-left;
 
     }
     .gallery-item-2 {
       grid-column: 1;
       grid-row: 2 / 5;
-      animation: 2.4s slide-left;
 
     }
     .gallery-item-3 {
       grid-column: 2 / 3;
       grid-row: 4;
-      animation: 3s slide-left;
 
     }
     .gallery-item-4 {
       grid-column: 2;
       grid-row: 4/2;
-      animation: 3.6s slide-left;
 
     }
     .gallery-item-5 {
       grid-column: 3;
       grid-row: 4;
-      animation: 3.9s slide-left;
 
     }
 
     .gallery-item-6 {
       grid-column: 2;
       grid-row: 4;
-      animation: 7s slide-left;
     }
-  }
-
-  .bg-img {
-    opacity: 0;
-    transition: all .5s;
   }
 
   .bg-img:hover {
@@ -172,12 +145,6 @@ pageElementArr.forEach((el:any) => observer.observe(el))
 
   .show {
     opacity: 1;
-  }
-
-  @media (prefers-reduced-motion) {
-    .hidden {
-      transition: none;
-    }
   }
 }
 </style>

@@ -83,20 +83,9 @@ onMounted(() => {
   transition-delay: 600ms;
 }
 
-.hidden {
-  opacity: 0;
-  transition: all 1s;
-}
-
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
 }
 </style>
