@@ -5,7 +5,8 @@ export default [
         src: 'https://s3.amazonaws.com/hhr-web/files/Take-Down-Or-Stay-Down-Digital-Piracy-And-Trade-Negotiation.pdf',
         backgroundImg: '/luther-m-e-bottrill-EsBufnuK4NE-unsplash.jpg',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'HHR'
     },
     {
         id: 1,
@@ -13,7 +14,8 @@ export default [
         src: 'http://www.fosspatents.com/2013/07/one-itc-chief-found-samsung-to-fail-to.html',
         backgroundImg: '/zana-latif-rSp7jTx_FvI-unsplash.jpg',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'FOSSPANTS'
     },
     {
         id: 2,
@@ -21,14 +23,16 @@ export default [
         src: 'https://www.ip-watch.org/2019/01/24/us-complaints-technology-transfer-china-negotiating-endgame/',
         backgroundImg: '/nevergg-DhOPjNWBbZE-unsplash.jpg',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'IP-WATCH'
     },
     {
         id: 3,
         title: 'U.S. response to Chinese IP theft could skirt WTO rules',
         src: 'https://www.axios.com/2018/03/19/us-response-to-chinese-ip-theft-could-skirt-wto-rules',
-        backgroundImg: '/alejandro-luengo-jL0tMFYOdBM-unsplash.jpg',
+        backgroundImg: '/alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg',
         mediaType: '',
-        payWall: ''
+        payWall: '',
+        source: 'AXIOS'
     }
 ]

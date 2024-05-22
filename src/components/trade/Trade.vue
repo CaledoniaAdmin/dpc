@@ -31,7 +31,6 @@ import tradeData from "../../data/trade.ts";
 
 <style scoped>
   .main {
-    height: 100%;
 
   /*
       //background-size: cover;
@@ -120,7 +119,6 @@ import tradeData from "../../data/trade.ts";
       .gallery-item-0 {
         grid-column: 1 / 3;
         grid-row: 1;
-        border: 1px solid red;
 
       }
       .gallery-item-1 {

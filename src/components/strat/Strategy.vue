@@ -5,7 +5,6 @@ import strategyData from '../../data/strategy.ts'
 
 <template>
   <div class="main">
-    <span>Strategy</span>
     <div class="card-container" v-for="article in strategyData" :key="article.id">
       <div class="card">{{ article.title }}</div>
     </div>
@@ -14,9 +13,8 @@ import strategyData from '../../data/strategy.ts'
 
 <style scoped>
 .main {
-  height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
@@ -25,7 +23,7 @@ import strategyData from '../../data/strategy.ts'
 }
 
 .card {
-  height: 350px;
-  width: 200px;
+  height: 100px;
+  width: 100%;
 }
 </style>

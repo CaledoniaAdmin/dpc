@@ -19,8 +19,10 @@ const scrollHash = ref({}) as object
 const handleNavClick = (e: Event) => {
 
   globalState.$patch({
-    activeNav: (e.target as HTMLButtonElement).id
+    activeNav: (e.target as HTMLButtonElement).value
   })
+
+  console.log('activeNav: ', globalState.activeNav)
 
   switch ((e.target as HTMLButtonElement).value) {
     case 'human': {
@@ -91,12 +93,13 @@ onMounted(() => {
 
 <template>
   <div v-if="width > 600" class="app-container">
-    <div class="mast">Dean Pinkert Consulting</div>
     <div class="navbar-container">
-      <button value="human" @click="handleNavClick">Human Rights</button>
-      <button value="intellectual" @click="handleNavClick">Intellectual Property</button>
-      <button value="strategy" @click="handleNavClick">Agency Strategy</button>
-      <button value="trade" @click="handleNavClick">Trade</button>
+      <div class="mast">Dean Pinkert Consulting</div>
+
+      <button :class="globalState.activeNav === 'human' ? 'active' : '' "  value="human" @click="handleNavClick">Human Rights</button>
+      <button :class="globalState.activeNav === 'intellectual' ? 'active' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
+      <button :class="globalState.activeNav === 'strategy' ? 'active' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
+      <button :class="globalState.activeNav === 'trade' ? 'active' : '' " value="trade" @click="handleNavClick">Trade</button>
     </div>
     <br/>
 
@@ -104,10 +107,10 @@ onMounted(() => {
     <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Strategy id="strategy" class="section"/>
     <Trade id="trade" class="section"/>
-    <br />
-    <div class="clients">Client Bar</div>
-    <div class="footer">Footer</div>
-    <button class="up-btn" value="human" @click="handleNavClick"> UP </button>
+<!--    <br />-->
+<!--    <div class="clients">Client Bar</div>-->
+<!--    <div class="footer">Footer</div>-->
+<!--    <button class="up-btn" value="human" @click="handleNavClick"> UP </button>-->
   </div>
   <div v-else class="app-container">
     <h1>MOBILE VIEW</h1>
@@ -133,9 +136,7 @@ onMounted(() => {
 
     .mast {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-bottom: 25px;
+      align-self: center;
     }
 
     .main {
@@ -166,7 +167,15 @@ onMounted(() => {
       width: 200px;
       font-size: 24px;
       color: black;
+      border-bottom: 5px solid white;
+
+      &.active {
+        border-bottom: 5px solid red;
+        border-bottom-right-radius: unset !important;
+        border-bottom-left-radius: unset !important;
+      }
     }
+
     .up-btn {
       position: sticky;
       bottom: 0;
@@ -180,6 +189,7 @@ onMounted(() => {
 
     .section {
       opacity: 0;
+      margin-top: 40px;
 
       &.show {
         opacity: 1;

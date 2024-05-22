@@ -34,7 +34,7 @@ onMounted(() => {
   <div class="main">
     <div class="column-container">
       <div v-for="(image) in ipData" class="column"  :key="image.id">
-        <div :style="
+        <div class="gallery-item" :style="
 `             background: url(${image.backgroundImg}), linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
               background-size: cover;
               background-repeat: no-repeat;
@@ -42,7 +42,14 @@ onMounted(() => {
               height: 100%;
               width: 100%;`
         ">
-          {{image.title}}
+          <div class="overlay">
+            <a :href="image.src" target="_blank">
+              <span class="title">{{image.title}}</span>
+              <span>source: <span class="source">{{image.source}}</span></span>
+              <span class="linkout">Read More...</span>
+
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -52,6 +59,17 @@ onMounted(() => {
 <style scoped>
 .main {
 
+}
+
+a {
+  color: white;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .column-container {
@@ -66,7 +84,6 @@ onMounted(() => {
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 1s;
-  margin-bottom: 15vh;
 }
 
 .column:nth-child(1) {
@@ -81,6 +98,34 @@ onMounted(() => {
 }
 .column:nth-child(4) {
   transition-delay: 600ms;
+}
+
+.overlay {
+  transition: .6s ease;
+  opacity: 0;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  .title {
+    font-weight: 600;
+  }
+
+  .linkout {
+    font-weight: 400;
+    text-decoration: underline;
+  }
+}
+
+.overlay:hover {
+  opacity: 0.7;
+  box-shadow:  2px 1px 6px 0 #949494;
+}
+
+.gallery-item:hover {
+  transform: scale(1.01);
 }
 
 .show {
