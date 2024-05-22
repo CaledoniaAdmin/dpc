@@ -67,6 +67,7 @@ onMounted(() => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
+      console.log('entry in app.vue: ', entry)
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       } else {
@@ -177,9 +178,12 @@ onMounted(() => {
       opacity: 1;
     }
 
-    @media (prefers-reduced-motion) {
-      .section {
-        transition: none;
+    .section {
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+        transition: all 1s;
       }
     }
   }

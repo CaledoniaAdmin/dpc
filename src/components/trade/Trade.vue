@@ -7,17 +7,14 @@ import tradeData from "../../data/trade.ts";
   <div class="main" >
     <div class="gallery">
       <div v-for="(image, idx) in tradeData" :class="`gallery-item gallery-item-${idx}`" :key="image.id">
-        <div class="bg-img" :style=" `
+        <div class="bg-img">
+          <img :src="image.backgroundImg" :style=" `
               position: absolute;
-              background: url(${image.backgroundImg}), linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
-              background-size: cover;
-              background-repeat: no-repeat;
-              background-position: center;
               height: ${image.height}px;
               width: 100%;
               text-align: center;
               color: white;
-           `">
+           `"/>
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>
@@ -91,14 +88,39 @@ import tradeData from "../../data/trade.ts";
         }
       }
 
+      .overlay {
+        transition: .6s ease;
+        opacity: 0;
+        position: absolute;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+        height: 100%;
+        width: 100%;
+        text-align: center;
+
+        .title {
+          font-weight: 600;
+        }
+
+        .linkout {
+          font-weight: 400;
+          text-decoration: underline;
+        }
+      }
+
       .overlay:hover {
         opacity: 0.7;
         box-shadow:  2px 1px 6px 0 #949494;
       }
 
+      .gallery-item:hover {
+        transform: scale(1.01);
+      }
+
+
       .gallery-item-0 {
         grid-column: 1 / 3;
         grid-row: 1;
+        border: 1px solid red;
 
       }
       .gallery-item-1 {
@@ -123,7 +145,7 @@ import tradeData from "../../data/trade.ts";
       }
       .gallery-item-5 {
         grid-column: 3;
-        grid-row: 4;
+        grid-row: 3/5;
 
       }
 
@@ -131,14 +153,6 @@ import tradeData from "../../data/trade.ts";
         grid-column: 2;
         grid-row: 4;
       }
-    }
-
-    .bg-img:hover {
-      transform: scale(1.01);
-    }
-
-    .show {
-      opacity: 1;
     }
   }
 </style>

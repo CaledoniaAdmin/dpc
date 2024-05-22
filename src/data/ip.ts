@@ -3,7 +3,7 @@ export default [
         id: 0,
         title: 'Take Down Or Stay Down: Digital Piracy And Trade Negotiation',
         src: 'https://s3.amazonaws.com/hhr-web/files/Take-Down-Or-Stay-Down-Digital-Piracy-And-Trade-Negotiation.pdf',
-        backgroundImg: 'public/assets/ip/luther-m-e-bottrill-EsBufnuK4NE-unsplash.jpg',
+        backgroundImg: '/luther-m-e-bottrill-EsBufnuK4NE-unsplash.jpg',
         mediaType: '',
         payWall: ''
     },
@@ -11,7 +11,7 @@ export default [
         id: 1,
         title: 'One ITC chief found Samsung to fail to offer Apple FRAND licensing terms to its UMTS patents',
         src: 'http://www.fosspatents.com/2013/07/one-itc-chief-found-samsung-to-fail-to.html',
-        backgroundImg: 'public/assets/ip/zana-latif-rSp7jTx_FvI-unsplash.jpg',
+        backgroundImg: '/zana-latif-rSp7jTx_FvI-unsplash.jpg',
         mediaType: '',
         payWall: ''
     },
@@ -19,7 +19,7 @@ export default [
         id: 2,
         title: 'US Complaints About Technology Transfer In China: Negotiating The Endgame',
         src: 'https://www.ip-watch.org/2019/01/24/us-complaints-technology-transfer-china-negotiating-endgame/',
-        backgroundImg: 'public/assets/ip/nevergg-DhOPjNWBbZE-unsplash.jpg',
+        backgroundImg: '/nevergg-DhOPjNWBbZE-unsplash.jpg',
         mediaType: '',
         payWall: ''
     },
@@ -27,7 +27,7 @@ export default [
         id: 3,
         title: 'U.S. response to Chinese IP theft could skirt WTO rules',
         src: 'https://www.axios.com/2018/03/19/us-response-to-chinese-ip-theft-could-skirt-wto-rules',
-        backgroundImg: 'public/assets/ip/alejandro-luengo-jL0tMFYOdBM-unsplash.jpg',
+        backgroundImg: '/alejandro-luengo-jL0tMFYOdBM-unsplash.jpg',
         mediaType: '',
         payWall: ''
     }
