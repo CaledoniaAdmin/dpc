@@ -9,6 +9,7 @@ import Human from "./components/hr/Human.vue";
 import Intellectual from "./components/ip/Intellectual.vue";
 import Strategy from "./components/strat/Strategy.vue";
 import Trade from "./components/trade/Trade.vue";
+import About from "./components/about/About.vue";
 
 const globalState = useGlobalStore()
 
@@ -69,6 +70,17 @@ const handleNavClick = (e: Event) => {
         behavior: "smooth",
       })
     }
+    case 'about': {
+      globalState.$patch({
+        activeNav: (e.target as HTMLButtonElement).value
+      })
+      console.log('about: ', scrollHash.value[3])
+      return window.scrollTo({
+        top: scrollHash.value[1] * 4,
+        left: 0,
+        behavior: "smooth",
+      })
+    }
     default:
       return console.log('error state')
   }
@@ -76,9 +88,6 @@ const handleNavClick = (e: Event) => {
 
 onMounted(() => {
   console.log('App mounted')
-
-  // I know the height of the screen and how many sections
-
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -113,6 +122,7 @@ onMounted(() => {
       <button :class="globalState.activeNav === 'intellectual' ? 'active' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
       <button :class="globalState.activeNav === 'strategy' ? 'active' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
       <button :class="globalState.activeNav === 'trade' ? 'active' : '' " value="trade" @click="handleNavClick">Trade</button>
+      <button :class="globalState.activeNav === 'about' ? 'active' : '' " value="about" @click="handleNavClick">About</button>
     </div>
     <br/>
 
@@ -120,6 +130,7 @@ onMounted(() => {
     <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Strategy id="strategy" class="section"/>
     <Trade id="trade" class="section"/>
+    <About id="about" class="section" />
 <!--    <br />-->
 <!--    <div class="clients">Client Bar</div>-->
 <!--    <div class="footer">Footer</div>-->
@@ -128,6 +139,7 @@ onMounted(() => {
   <div v-else class="app-container">
     <h1>MOBILE VIEW</h1>
   </div>
+  <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
 </template>
 
 <style scoped>
@@ -137,14 +149,25 @@ onMounted(() => {
     position: relative;
   }
 
+  .foost {
+    display: flex;
+    justify-content: center;
+  }
+
+
   .app-container {
     width: 100vw;
     height: 100%;
 
     scroll-behavior: smooth !important;
 
+
     #human, #strategy, #trade, #intellectual {
       scroll-behavior: smooth !important;
+    }
+
+    #strategy {
+      margin: 10px 0 70px 0;
     }
 
     .mast {
@@ -198,10 +221,6 @@ onMounted(() => {
 
     .show {
       opacity: 1;
-    }
-
-    #strategy {
-      margin: 10px 0 60px 0;
     }
 
     .section {
