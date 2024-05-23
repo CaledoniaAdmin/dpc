@@ -26,6 +26,9 @@ const handleNavClick = (e: Event) => {
 
   switch ((e.target as HTMLButtonElement).value) {
     case 'human': {
+      globalState.$patch({
+        activeNav: (e.target as HTMLButtonElement).value
+      })
       console.log('human')
       return window.scrollTo({
         top: 0,
@@ -34,6 +37,9 @@ const handleNavClick = (e: Event) => {
       })
     }
     case 'intellectual': {
+      globalState.$patch({
+        activeNav: (e.target as HTMLButtonElement).value
+      })
       console.log('intellectual')
       return window.scrollTo({
         top: scrollHash.value[1],
@@ -42,6 +48,9 @@ const handleNavClick = (e: Event) => {
       })
     }
     case 'strategy': {
+      globalState.$patch({
+        activeNav: (e.target as HTMLButtonElement).value
+      })
       console.log('strategy')
       return window.scrollTo({
         top: scrollHash.value[2],
@@ -50,6 +59,9 @@ const handleNavClick = (e: Event) => {
       })
     }
     case 'trade': {
+      globalState.$patch({
+        activeNav: (e.target as HTMLButtonElement).value
+      })
      console.log('trade: ', scrollHash.value[3])
      return window.scrollTo({
         top: scrollHash.value[1] * 3,
@@ -67,9 +79,10 @@ onMounted(() => {
 
   // I know the height of the screen and how many sections
 
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log('entry in app.vue: ', entry)
+      console.log('entry in app.vue: ', entry, (entry.target as HTMLElement).id ,globalState)
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       } else {
@@ -157,7 +170,7 @@ onMounted(() => {
       justify-content: space-evenly;
       position: sticky;
       top: 0;
-      z-index: 1;
+      z-index: 3;
       background: white;
     }
 
@@ -187,9 +200,12 @@ onMounted(() => {
       opacity: 1;
     }
 
+    #strategy {
+      margin: 10px 0 60px 0;
+    }
+
     .section {
       opacity: 0;
-      margin-top: 40px;
 
       &.show {
         opacity: 1;
