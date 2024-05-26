@@ -20,7 +20,7 @@ const globalState = useGlobalStore()
 
 const { width, height } = useWindowSize()
 
-const scrollHash = ref({}) as object
+const scrollHash = ref({}) as any
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
 const sectionsObjects = [{id: 'Human Rights', data: humanData}, {id: 'Intellectual Property', data: ipData}, {id: 'Agency Strategy', data: strategyData}, {id: 'Trade', data: tradeData}] as any[]
@@ -51,8 +51,7 @@ const handleNavClick = (e: Event) => {
       })
       console.log('intellectual')
       return window.scrollTo({
-        // @ts-ignore
-        top: scrollHash?.value[1],
+        top: scrollHash.value[1],
         left: 0,
         behavior: "smooth",
       })
@@ -63,8 +62,7 @@ const handleNavClick = (e: Event) => {
       })
       console.log('strategy')
       return window.scrollTo({
-        // @ts-ignore
-        top: scrollHash?.value[2],
+        top: scrollHash.value[2],
         left: 0,
         behavior: "smooth",
       })
@@ -74,8 +72,7 @@ const handleNavClick = (e: Event) => {
         activeNav: (e.target as HTMLButtonElement).value
       })
      return window.scrollTo({
-       // @ts-ignore
-       top: scrollHash?.value[1] * 3,
+       top: scrollHash.value[1] * 3,
         left: 0,
         behavior: "smooth",
       })
@@ -84,10 +81,9 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      // console.log('about: ', scrollHash.value[3])
+      console.log('about: ', scrollHash.value[3])
       return window.scrollTo({
-        // @ts-ignore
-        top: scrollHash?.value[1] * 4,
+        top: scrollHash.value[1] * 4,
         left: 0,
         behavior: "smooth",
       })
@@ -125,7 +121,6 @@ onMounted(() => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
 
-  //@ts-ignore
   scrollHash.value = hash
 
 
