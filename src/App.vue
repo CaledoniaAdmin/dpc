@@ -49,7 +49,7 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('intellectual')
+      console.log('intellectual', scrollHash.value[1])
       return window.scrollTo({
         top: scrollHash.value[1],
         left: 0,
@@ -106,7 +106,7 @@ onMounted(() => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log('entry in app.vue: ', entry, (entry.target as HTMLElement).id ,globalState)
+      // console.log('entry in app.vue: ', entry, (entry.target as HTMLElement).id ,globalState)
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       } else {
@@ -117,12 +117,12 @@ onMounted(() => {
 
   const pageElementArr = document.querySelector('.section') ? Array.from(document.querySelectorAll('.section')) : Array.from(document.querySelectorAll('.mobile-content'))
 
-  const hash = pageElementArr.reduce((acc: any, idx: any) => {
+  scrollHash.value = pageElementArr.reduce((acc, value,  idx) => {
+    console.log('value: ', value)
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
 
-  scrollHash.value = hash
-
+  console.log('pageElementArr: ', pageElementArr, scrollHash)
 
   pageElementArr.forEach((el:any) => observer.observe(el))
 })
