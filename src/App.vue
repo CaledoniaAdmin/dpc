@@ -11,11 +11,18 @@ import Strategy from "./components/strat/Strategy.vue";
 import Trade from "./components/trade/Trade.vue";
 import About from "./components/about/About.vue";
 
+import tradeData from '../src/data/trade.ts'
+import strategyData from '../src/data/strategy.ts'
+import ipData from '../src/data/ip.ts'
+import humanData from '../src/data/human.ts'
+
 const globalState = useGlobalStore()
 
 const { width, height } = useWindowSize()
 
 const scrollHash = ref({}) as object
+
+const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
 
 const handleNavClick = (e: Event) => {
 
@@ -100,7 +107,7 @@ onMounted(() => {
     })
   })
 
-  const pageElementArr = Array.from(document.querySelectorAll('.section'))
+  const pageElementArr = document.querySelector('.section') ? Array.from(document.querySelectorAll('.section')) : Array.from(document.querySelectorAll('.mobile-content'))
 
   const hash = pageElementArr.reduce((acc, value, idx) => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
@@ -135,11 +142,31 @@ onMounted(() => {
 <!--    <div class="clients">Client Bar</div>-->
 <!--    <div class="footer">Footer</div>-->
 <!--    <button class="up-btn" value="human" @click="handleNavClick"> UP </button>-->
+    <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
+
   </div>
-  <div v-else class="app-container">
-    <h1>MOBILE VIEW</h1>
+  <div v-else class="app-container-mobile">
+    <div class="mobile-header">
+      <div class="mast">Dean Pinkert Consulting</div>
+    </div>
+    <div class="mobile-content" v-for="(page, index) in sectionsArray" :key="sectionsArray[index]">
+      <div class="card-container" v-for="article in page" :key="article.id">
+        <a :href="article.src" target="_blank">
+              <span class="card">
+        <span>{{ article.title }}</span>
+        <span>source: <span class="source">{{article.source}}</span></span>
+        <span class="linkout">Read More...</span>
+      </span>
+
+          <img :src="article.backgroundImg" :style="`
+              position: absolute;
+              width: 100%;
+              text-align: center;
+              color: white;`"/>
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
 </template>
 
 <style scoped>
@@ -232,4 +259,60 @@ onMounted(() => {
       }
     }
   }
+
+
+  .app-container-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    .mobile-header {
+      .mast {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: sticky;
+      }
+    }
+
+    .section {
+      height: 25vw;
+      width: 100vw;
+    }
+
+
+
+    a {
+      color: white;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      object-fit: contain;
+    }
+
+    .card-container {
+      position: relative;
+      height: 25vh;
+      overflow: hidden;
+    }
+
+    .card {
+      height: 25vh;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      color: white;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 5%;
+    }
+  }
+
 </style>
