@@ -23,6 +23,7 @@ const { width, height } = useWindowSize()
 const scrollHash = ref({}) as object
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
+const sectionsObjects = [{id: 'Human Rights', data: humanData}, {id: 'Intellectual Property', data: ipData}, {id: 'Agency Strategy', data: strategyData}, {id: 'Trade', data: tradeData}] as any[]
 
 const handleNavClick = (e: Event) => {
 
@@ -93,6 +94,14 @@ const handleNavClick = (e: Event) => {
   }
 }
 
+const backToTop = () => {
+  return window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  })
+}
+
 onMounted(() => {
   console.log('App mounted')
 
@@ -149,14 +158,15 @@ onMounted(() => {
     <div class="mobile-header">
       <div class="mast">Dean Pinkert Consulting</div>
     </div>
-    <div class="mobile-content" v-for="(page, index) in sectionsArray" :key="sectionsArray[index]">
-      <div class="card-container" v-for="article in page" :key="article.id">
+    <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
+      <div class="section-header">{{page.id}}</div>
+      <div class="card-container" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
-              <span class="card">
-        <span>{{ article.title }}</span>
-        <span>source: <span class="source">{{article.source}}</span></span>
-        <span class="linkout">Read More...</span>
-      </span>
+          <span class="card">
+            <span class="card-title">{{ article.title }}</span>
+            <span>source: <span class="source">{{article.source}}</span></span>
+            <span class="linkout">Read More...</span>
+          </span>
 
           <img :src="article.backgroundImg" :style="`
               position: absolute;
@@ -166,6 +176,13 @@ onMounted(() => {
         </a>
       </div>
     </div>
+    <div class="controls">
+      <button @click="backToTop">UP</button>
+    </div>
+    <div v-if="false" class="contact">
+      <button>MAIL</button>
+    </div>
+    <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
   </div>
 </template>
 
@@ -191,6 +208,7 @@ onMounted(() => {
 
     #human, #strategy, #trade, #intellectual {
       scroll-behavior: smooth !important;
+      cursor: pointer;
     }
 
     #strategy {
@@ -200,6 +218,8 @@ onMounted(() => {
     .mast {
       display: flex;
       align-self: center;
+      position: sticky;
+      top: 0;
     }
 
     .main {
@@ -267,12 +287,37 @@ onMounted(() => {
     justify-content: center;
     width: 100vw;
     height: 100%;
+    position: relative;
+
+    .section-header {
+      position: sticky;
+      top: 20px;
+      z-index: 4;
+      background-color: white;
+    }
+
+    .controls {
+      position: sticky;
+      margin-left: 80%;
+      bottom: 20px;
+      z-index: 4;
+    }
+
+    .contact {
+      position: sticky;
+      margin-left: 80%;
+      bottom: 80%;
+      z-index: 4;
+    }
     .mobile-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background-color: white;
       .mast {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        position: sticky;
       }
     }
 
@@ -303,15 +348,25 @@ onMounted(() => {
     }
 
     .card {
+      position: absolute;
       height: 25vh;
       width: 100%;
-      position: absolute;
       z-index: 1;
       color: white;
       font-size: 13px;
       display: flex;
       flex-direction: column;
-      margin-top: 5%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.86));
+
+      .card-title {
+        width: 88vw;
+      }
+
+      .linkout {
+        font-weight: 400;
+        text-decoration: underline;
+        margin-top: 35px;
+      }
     }
   }
 
