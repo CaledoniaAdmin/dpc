@@ -51,7 +51,7 @@ const handleNavClick = (e: Event) => {
       })
       console.log('intellectual')
       return window.scrollTo({
-        top: scrollHash.value[1],
+        top: scrollHash?.value[1],
         left: 0,
         behavior: "smooth",
       })
@@ -62,7 +62,7 @@ const handleNavClick = (e: Event) => {
       })
       console.log('strategy')
       return window.scrollTo({
-        top: scrollHash.value[2],
+        top: scrollHash?.value[2],
         left: 0,
         behavior: "smooth",
       })
@@ -73,7 +73,7 @@ const handleNavClick = (e: Event) => {
       })
      console.log('trade: ', scrollHash.value[3])
      return window.scrollTo({
-        top: scrollHash.value[1] * 3,
+        top: scrollHash?.value[1] * 3,
         left: 0,
         behavior: "smooth",
       })
@@ -82,9 +82,9 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('about: ', scrollHash.value[3])
+      // console.log('about: ', scrollHash.value[3])
       return window.scrollTo({
-        top: scrollHash.value[1] * 4,
+        top: scrollHash?.value[1] * 4,
         left: 0,
         behavior: "smooth",
       })
@@ -118,10 +118,11 @@ onMounted(() => {
 
   const pageElementArr = document.querySelector('.section') ? Array.from(document.querySelectorAll('.section')) : Array.from(document.querySelectorAll('.mobile-content'))
 
-  const hash = pageElementArr.reduce((acc, value, idx) => {
+  const hash = pageElementArr.reduce((acc: any, idx: any) => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
 
+  //@ts-ignore
   scrollHash.value = hash
 
 

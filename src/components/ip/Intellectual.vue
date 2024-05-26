@@ -21,7 +21,7 @@ onMounted(() => {
 
   pageElementArr.forEach((el:any) => observer.observe(el))
 
-  const hash = pageElementArr.reduce((acc, value, idx) => {
+  const hash = pageElementArr.reduce((acc: any, idx: any) => {
     return {...acc, [idx]: idx * Number(props.height.value) || 0}
   })
 
