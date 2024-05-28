@@ -97,17 +97,17 @@ import humanData from '../../data/human.ts'
     }
     .gallery-item-1 {
       grid-column: 3;
-      grid-row: 1/5;
+      grid-row: 1/6;
 
     }
     .gallery-item-2 {
       grid-column: 1;
-      grid-row: 2 / 5;
+      grid-row: 2 / 6;
 
     }
     .gallery-item-3 {
       grid-column: 2 / 3;
-      grid-row: 4;
+      grid-row: 4 / 6;
 
     }
     .gallery-item-4 {

@@ -24,7 +24,7 @@ export default [
         title: 'Trump must change the narrative on trade, former US trade commissioner says',
         src: 'https://www.cnbc.com/video/2019/11/27/trump-must-change-the-narrative-on-trade-former-us-trade-commissioner-says.html',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/sean-ferigan-ZyKASePDCmM-unsplash.jpg',
-        height: 470,
+        height: 630,
         mediaType: '',
         payWall: '',
         source: 'CNBC'
@@ -34,7 +34,7 @@ export default [
         title: 'Dean Pinkert: US, China have opted for engagement over continued escalation',
         src: 'https://www.cnbc.com/video/2019/12/26/us-china-trade-phase-one-details-tariffs-squawk-box.html',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/ian-taylor-jOqJbvo1P9g-unsplash.jpg',
-        height: 150,
+        height: 310,
         mediaType: '',
         payWall: '',
         source: 'CNBC'
@@ -54,7 +54,7 @@ export default [
         title: 'Optimism on U.S.-China trade talks?',
         src: 'https://finance.yahoo.com/video/optimism-u-china-trade-talks-162452422.html?guccounter=1',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/nathan-cima-vG5akutNqCM-unsplash.jpg',
-        height: 310,
+        height: 470,
         mediaType: '',
         payWall: '',
         source: 'Yahoo Finance'

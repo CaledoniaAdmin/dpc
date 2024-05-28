@@ -128,22 +128,22 @@ import tradeData from "../../data/trade.ts";
       }
       .gallery-item-2 {
         grid-column: 1;
-        grid-row: 2 / 5;
+        grid-row: 2 / 6;
 
       }
       .gallery-item-3 {
         grid-column: 2 / 3;
-        grid-row: 4;
+        grid-row: 4 / 6;
 
       }
       .gallery-item-4 {
         grid-column: 2;
-        grid-row: 4/2;
+        grid-row: 4 / 2;
 
       }
       .gallery-item-5 {
         grid-column: 3;
-        grid-row: 3/5;
+        grid-row: 3 / 6;
 
       }
 

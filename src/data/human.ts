@@ -14,7 +14,7 @@ export default [
         title: 'Seeking Justice: The State of Transnational Corporate Accountability',
         src: 'https://www.yalelawjournal.org/forum/seeking-justice-the-state-of-transnational-corporate-accountability',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/mathias-reding-yfXhqAW5X0c-unsplash.jpg',
-        height: 630,
+        height: 790,
         mediaType: '',
         payWall: '',
         source: 'Yale Law Journal'
@@ -24,7 +24,7 @@ export default [
         title: 'Stringency of US Forced Labor Law Is Crucial to Its Success\n',
         src: 'https://sourcingjournal.com/topics/thought-leadership/us-forced-labor-law-china-uflpa-customs-cbp-uyghur-genocide-469337/',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/tim-mossholder-ZoiUrv5fi-k-unsplash.jpg',
-        height: 470,
+        height: 630,
         mediaType: '',
         payWall: '',
         source: 'Sourcing Journal'
@@ -34,7 +34,7 @@ export default [
         title: 'Supply Trace is grateful for the insights, expertise and guidance of its multi-stakeholder Advisory Board',
         src: 'https://info.supplytrace.org/advisory-board/',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/adrian-sulyok-sczNLg6rrhQ-unsplash.jpg',
-        height: 150,
+        height: 310,
         mediaType: '',
         payWall: '',
         source: 'SupplyTrace'
