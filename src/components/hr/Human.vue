@@ -13,8 +13,8 @@ import humanData from '../../data/human.ts'
               height: ${image.height}px;
               width: 100%;
               text-align: center;
-              color: white;
-           `"/>
+              color: white;`"
+          />
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>

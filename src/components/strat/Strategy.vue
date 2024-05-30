@@ -17,7 +17,8 @@ import strategyData from '../../data/strategy.ts'
               position: absolute;
               width: 100%;
               text-align: center;
-              color: white;`"/>
+              color: white;`"
+             loading="lazy"/>
       </a>
     </div>
   </div>

@@ -171,7 +171,8 @@ onMounted(() => {
               position: absolute;
               width: 100%;
               text-align: center;
-              color: white;`"/>
+              color: white;`"
+              loading="lazy"/>
         </a>
       </div>
     </div>
