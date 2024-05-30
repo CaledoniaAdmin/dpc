@@ -36,7 +36,7 @@ import humanData from '../../data/human.ts'
 <style scoped>
 
 .main {
-  /*height: 100%;*/
+  height: 100%;
 
   .gallery {
     display: grid;

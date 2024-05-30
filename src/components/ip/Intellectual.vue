@@ -5,8 +5,6 @@ import ipData from '../../data/ip.ts'
 const props = defineProps(['height', 'width', 'scrollHash'])
 
 onMounted(() => {
-  console.log('Intellectual page mounted: ', props)
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -30,7 +28,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <span>IP</span>
   <div class="main">
     <div class="column-container">
       <div v-for="(image) in ipData" class="column"  :key="image.id">
@@ -59,7 +56,7 @@ onMounted(() => {
 
 <style scoped>
 .main {
-
+  height: 100%;
 }
 
 a {
@@ -80,7 +77,7 @@ a {
 
 .column {
   width: 25vw;
-  height: 85vh;
+  height: 100vh;
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);

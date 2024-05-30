@@ -32,7 +32,7 @@ const handleNavClick = (e: Event) => {
   })
 
   switch ((e.target as HTMLButtonElement).value) {
-    case 'human': {
+    case 'about': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
@@ -52,7 +52,7 @@ const handleNavClick = (e: Event) => {
         behavior: "smooth",
       })
     }
-    case 'strategy': {
+    case 'trade': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
@@ -62,7 +62,7 @@ const handleNavClick = (e: Event) => {
         behavior: "smooth",
       })
     }
-    case 'trade': {
+    case 'strategy': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
@@ -72,7 +72,7 @@ const handleNavClick = (e: Event) => {
         behavior: "smooth",
       })
     }
-    case 'about': {
+    case 'human': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
@@ -123,23 +123,20 @@ onMounted(() => {
     <div class="navbar-container">
       <div class="mast">Dean Pinkert Consulting</div>
 
-      <button :class="globalState.activeNav === 'human' ? 'active' : '' "  value="human" @click="handleNavClick">Human Rights</button>
-      <button :class="globalState.activeNav === 'intellectual' ? 'active' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
-      <button :class="globalState.activeNav === 'strategy' ? 'active' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
-      <button :class="globalState.activeNav === 'trade' ? 'active' : '' " value="trade" @click="handleNavClick">Trade</button>
       <button :class="globalState.activeNav === 'about' ? 'active' : '' " value="about" @click="handleNavClick">About</button>
-    </div>
-    <br/>
+      <button :class="globalState.activeNav === 'intellectual' ? 'active' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
+      <button :class="globalState.activeNav === 'trade' ? 'active' : '' " value="trade" @click="handleNavClick">Trade</button>
+      <button :class="globalState.activeNav === 'strategy' ? 'active' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
+      <button :class="globalState.activeNav === 'human' ? 'active' : '' "  value="human" @click="handleNavClick">Human Rights</button>
 
-    <Human id="human" ref="human" class="section" />
-    <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
-    <Strategy id="strategy" class="section"/>
-    <Trade id="trade" class="section"/>
+    </div>
+
     <About id="about" class="section" />
-<!--    <br />-->
-<!--    <div class="clients">Client Bar</div>-->
-<!--    <div class="footer">Footer</div>-->
-<!--    <button class="up-btn" value="human" @click="handleNavClick"> UP </button>-->
+    <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
+    <Trade id="trade" class="section"/>
+    <Strategy id="strategy" class="section"/>
+    <Human id="human" ref="human" class="section" />
+
     <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
 
   </div>
@@ -206,10 +203,6 @@ onMounted(() => {
     #human, #strategy, #trade, #intellectual {
       scroll-behavior: smooth !important;
       cursor: pointer;
-    }
-
-    #strategy {
-      margin: 10px 0 70px 0;
     }
 
     .mast {

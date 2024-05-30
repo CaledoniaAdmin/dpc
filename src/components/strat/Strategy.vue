@@ -13,7 +13,9 @@ import strategyData from '../../data/strategy.ts'
         <span class="linkout">Read More...</span>
       </span>
 
-        <img :src="article.backgroundImg" :style="`
+        <img :src="article.backgroundImg"
+             :alt="article.title"
+             :style="`
               position: absolute;
               width: 100%;
               text-align: center;
@@ -26,6 +28,7 @@ import strategyData from '../../data/strategy.ts'
 
 <style scoped>
 .main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
