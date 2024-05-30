@@ -140,12 +140,12 @@ onMounted(() => {
       <div class="mast">Dean Pinkert Consulting</div>
     </div>
     <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
-      <div :class="`section-header ${page.key}`">{{page.id}}</div>
+      <div :class="`section-header ${page.key}`">{{page.id.toUpperCase()}}</div>
       <div class="card-container" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
           <span class="card">
             <span class="card-title">{{ article.title }}</span>
-            <span>source: <span class="source">{{article.source}}</span></span>
+            <span class="source">source: <span class="source">{{article.source}}</span></span>
             <span class="linkout">Read More...</span>
           </span>
 
@@ -296,6 +296,13 @@ onMounted(() => {
       position: sticky;
       top: 20px;
       z-index: 4;
+      height: 40px;
+      font-weight: 500;
+      font-size: 20px !important;
+      display: flex;
+      align-items: center;
+      font-family: 'EB Garamond',sans-serif;
+
 
       &.human, #human {
         background-color: white;
@@ -382,10 +389,14 @@ onMounted(() => {
         width: 88vw;
       }
 
+      .source {
+        padding-top: 15px;
+      }
+
       .linkout {
         font-weight: 400;
         text-decoration: underline;
-        margin-top: 35px;
+        margin-top: 15px;
       }
     }
   }
