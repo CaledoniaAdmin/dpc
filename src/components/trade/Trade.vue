@@ -38,14 +38,6 @@ import tradeData from "../../data/trade.ts";
 <style scoped>
   .main {
 
-  /*
-      //background-size: cover;
-    //background-repeat: no-repeat;
-    //background-position: center;
-    //background-image: url('public/assets/trade/william-william-NndKt2kF1L4-unsplash.jpg');
-
-  */
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

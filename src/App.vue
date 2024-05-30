@@ -31,14 +31,11 @@ const handleNavClick = (e: Event) => {
     activeNav: (e.target as HTMLButtonElement).value
   })
 
-  console.log('activeNav: ', globalState.activeNav)
-
   switch ((e.target as HTMLButtonElement).value) {
     case 'human': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('human')
       return window.scrollTo({
         top: 0,
         left: 0,
@@ -49,7 +46,6 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('intellectual', scrollHash.value[1])
       return window.scrollTo({
         top: scrollHash.value[1],
         left: 0,
@@ -60,7 +56,6 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('strategy')
       return window.scrollTo({
         top: scrollHash.value[2],
         left: 0,
@@ -81,7 +76,6 @@ const handleNavClick = (e: Event) => {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
       })
-      console.log('about: ', scrollHash.value[3])
       return window.scrollTo({
         top: scrollHash.value[1] * 4,
         left: 0,
@@ -106,7 +100,6 @@ onMounted(() => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      // console.log('entry in app.vue: ', entry, (entry.target as HTMLElement).id ,globalState)
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       } else {
@@ -118,12 +111,9 @@ onMounted(() => {
   const pageElementArr = document.querySelector('.section') ? Array.from(document.querySelectorAll('.section')) : Array.from(document.querySelectorAll('.mobile-content'))
 
   scrollHash.value = pageElementArr.reduce((acc, value,  idx) => {
-    console.log('value: ', value)
+    console.log('value: ', !!value)
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
-
-  console.log('pageElementArr: ', pageElementArr, scrollHash)
-
   pageElementArr.forEach((el:any) => observer.observe(el))
 })
 </script>
@@ -167,12 +157,16 @@ onMounted(() => {
             <span class="linkout">Read More...</span>
           </span>
 
-          <img :src="article.backgroundImg" :style="`
-              position: absolute;
-              width: 100%;
-              text-align: center;
-              color: white;`"
-              loading="lazy"/>
+          <img :src="article.backgroundImg"
+               :alt="article.title"
+               :style="`
+                  position: absolute;
+                  width: 100%;
+                  text-align: center;
+                  color: white;`"
+                loading="lazy"
+                width="100%"
+          />
         </a>
       </div>
     </div>
