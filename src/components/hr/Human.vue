@@ -17,6 +17,7 @@ import humanData from '../../data/human.ts'
                 text-align: center;
                 color: white;`"
                :height="image.height"
+               width="100%"
           />
           <div class="overlay">
             <a :href="image.src" target="_blank">
