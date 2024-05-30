@@ -49,7 +49,7 @@ img {
 
 .card-container {
   position: relative;
-  height: 220px;
+  height: 255px;
   overflow: hidden;
 }
 
@@ -64,5 +64,10 @@ img {
   display: flex;
   flex-direction: column;
   margin-top: 5%;
+}
+
+.linkout {
+  font-weight: 400;
+  text-decoration: underline;
 }
 </style>

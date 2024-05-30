@@ -23,7 +23,7 @@ const { width, height } = useWindowSize()
 const scrollHash = ref({}) as any
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
-const sectionsObjects = [{id: 'Human Rights', data: humanData}, {id: 'Intellectual Property', data: ipData}, {id: 'Agency Strategy', data: strategyData}, {id: 'Trade', data: tradeData}] as any[]
+const sectionsObjects = [{id: 'Human Rights', data: humanData, key: 'human'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Trade', data: tradeData, key: 'trade'}] as any[]
 
 const handleNavClick = (e: Event) => {
 
@@ -32,16 +32,6 @@ const handleNavClick = (e: Event) => {
   })
 
   switch ((e.target as HTMLButtonElement).value) {
-    case 'about': {
-      globalState.$patch({
-        activeNav: (e.target as HTMLButtonElement).value
-      })
-      return window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
-    }
     case 'intellectual': {
       globalState.$patch({
         activeNav: (e.target as HTMLButtonElement).value
@@ -83,7 +73,11 @@ const handleNavClick = (e: Event) => {
       })
     }
     default:
-      return console.log('error state')
+      return window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
   }
 }
 
@@ -91,12 +85,14 @@ const backToTop = () => {
   return window.scrollTo({
     top: 0,
     left: 0,
-    behavior: "smooth",
+    behavior: "smooth"
   })
 }
 
 onMounted(() => {
   console.log('App mounted')
+
+  window.scrollTo(0,0)
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -121,13 +117,12 @@ onMounted(() => {
 <template>
   <div v-if="width > 600" class="app-container">
     <div class="navbar-container">
-      <div class="mast">Dean Pinkert Consulting</div>
+      <div class="mast" @click="handleNavClick">Dean Pinkert Consulting</div>
 
-      <button :class="globalState.activeNav === 'about' ? 'active' : '' " value="about" @click="handleNavClick">About</button>
-      <button :class="globalState.activeNav === 'intellectual' ? 'active' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
-      <button :class="globalState.activeNav === 'trade' ? 'active' : '' " value="trade" @click="handleNavClick">Trade</button>
-      <button :class="globalState.activeNav === 'strategy' ? 'active' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
-      <button :class="globalState.activeNav === 'human' ? 'active' : '' "  value="human" @click="handleNavClick">Human Rights</button>
+      <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
+      <button :class="globalState.activeNav === 'trade' ? 'trade' : '' " value="trade" @click="handleNavClick">Trade</button>
+      <button :class="globalState.activeNav === 'strategy' ? 'strategy' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
+      <button :class="globalState.activeNav === 'human' ? 'human' : '' "  value="human" @click="handleNavClick">Human Rights</button>
 
     </div>
 
@@ -145,7 +140,7 @@ onMounted(() => {
       <div class="mast">Dean Pinkert Consulting</div>
     </div>
     <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
-      <div class="section-header">{{page.id}}</div>
+      <div :class="`section-header ${page.key}`">{{page.id}}</div>
       <div class="card-container" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
           <span class="card">
@@ -199,6 +194,21 @@ onMounted(() => {
 
     scroll-behavior: smooth !important;
 
+    .human, #human {
+     background-color: #f65147;
+    }
+
+    .strategy, #strategy {
+      background-color: #eaeadd;
+    }
+
+    .trade,#trade {
+      background-color: #f1191b;
+    }
+
+    .intellectual, #intellectual {
+      background-color: #fec452;
+    }
 
     #human, #strategy, #trade, #intellectual {
       scroll-behavior: smooth !important;
@@ -210,6 +220,7 @@ onMounted(() => {
       align-self: center;
       position: sticky;
       top: 0;
+      cursor: pointer;
     }
 
     .main {
@@ -237,10 +248,11 @@ onMounted(() => {
     button {
       cursor: pointer;
       background-color: transparent;
-      width: 200px;
-      font-size: 24px;
+      width: 250px;
+      font-size: 16px;
+      line-height: 1em;
       color: black;
-      border-bottom: 5px solid white;
+      border-right: 0 !important;
 
       &.active {
         border-bottom: 5px solid red;
@@ -279,11 +291,29 @@ onMounted(() => {
     height: 100%;
     position: relative;
 
+
     .section-header {
       position: sticky;
       top: 20px;
       z-index: 4;
-      background-color: white;
+
+      &.human, #human {
+        background-color: white;
+      }
+
+      &.strategy, #strategy {
+        background-color: #d9ebe9;
+      }
+
+      &.trade,#trade {
+        background-color: #2467a0;
+        color: white;
+      }
+
+      &.intellectual, #intellectual {
+        background-color: #1c2159;
+        color: white;
+      }
     }
 
     .controls {
