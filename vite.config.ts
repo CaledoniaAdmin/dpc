@@ -8,10 +8,10 @@ export default defineConfig({
       vue(),
       ViteImageOptimizer({
           jpeg: {
-              quality: 20,
+              quality: 10,
           },
           jpg: {
-              quality: 20,
+              quality: 10,
           },
       })],
   base: '/dpc/'

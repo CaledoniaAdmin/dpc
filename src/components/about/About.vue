@@ -10,6 +10,7 @@
           src="https://images.squarespace-cdn.com/content/v1/5810dda3e3df28ce37b58357/1635801209439-FFUCZLQKLS0TSL2CJ33G/signal-2021-11-01-160737_001.jpg?format=1000w"
           width="100%"
           loading="lazy"
+          height="100%"
       />
     </div>
     <div class="text">

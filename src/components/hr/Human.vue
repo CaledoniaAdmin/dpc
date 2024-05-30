@@ -8,12 +8,15 @@ import humanData from '../../data/human.ts'
     <div class="gallery">
       <div v-for="(image, idx) in humanData" :class="`gallery-item gallery-item-${idx}`" :key="image.id">
         <div class="bg-img">
-          <img :src="image.backgroundImg" :style=" `
-              position: absolute;
-              height: ${image.height}px;
-              width: 100%;
-              text-align: center;
-              color: white;`"
+          <img :src="image.backgroundImg"
+               :alt="image.title"
+               :style=" `
+                position: absolute;
+                height: ${image.height}px;
+                width: 100%;
+                text-align: center;
+                color: white;`"
+               :height="image.height"
           />
           <div class="overlay">
             <a :href="image.src" target="_blank">

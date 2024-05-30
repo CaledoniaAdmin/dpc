@@ -8,13 +8,17 @@ import tradeData from "../../data/trade.ts";
     <div class="gallery">
       <div v-for="(image, idx) in tradeData" :class="`gallery-item gallery-item-${idx}`" :key="image.id">
         <div class="bg-img">
-          <img :src="image.backgroundImg" :style=" `
-              position: absolute;
-              height: ${image.height}px;
-              width: 100%;
-              text-align: center;
-              color: white;`"
-               loading="lazy"/>
+          <img :src="image.backgroundImg"
+               :alt="image.title"
+               :style=" `
+                position: absolute;
+                height: ${image.height}px;
+                width: 100%;
+                text-align: center;
+                color: white;`"
+               loading="lazy"
+               :height="image.height"
+          />
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>

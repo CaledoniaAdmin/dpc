@@ -34,14 +34,15 @@ onMounted(() => {
   <div class="main">
     <div class="column-container">
       <div v-for="(image) in ipData" class="column"  :key="image.id">
-        <div class="gallery-item" :style="
+        <div class="gallery-item"
+             :style="
 `             background: url(${image.backgroundImg}), linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
               height: 100%;
-              width: 100%;`
-        ">
+              width: 100%;`"
+        >
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>
