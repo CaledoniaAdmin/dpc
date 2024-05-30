@@ -119,10 +119,10 @@ onMounted(() => {
     <div class="navbar-container">
       <div class="mast" @click="handleNavClick">Dean Pinkert Consulting</div>
 
-      <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : '' " value="intellectual" @click="handleNavClick">Intellectual Property</button>
-      <button :class="globalState.activeNav === 'trade' ? 'trade' : '' " value="trade" @click="handleNavClick">Trade</button>
-      <button :class="globalState.activeNav === 'strategy' ? 'strategy' : '' " value="strategy" @click="handleNavClick">Agency Strategy</button>
-      <button :class="globalState.activeNav === 'human' ? 'human' : '' "  value="human" @click="handleNavClick">Human Rights</button>
+      <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'nav-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
+      <button :class="globalState.activeNav === 'trade' ? 'trade' : 'nav-item' " value="trade" @click="handleNavClick">TRADE</button>
+      <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'nav-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
+      <button :class="globalState.activeNav === 'human' ? 'human' : 'nav-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
 
     </div>
 
@@ -191,23 +191,33 @@ onMounted(() => {
   .app-container {
     width: 100vw;
     height: 100%;
+    font-family: "Times New Roman",sans-serif;
+
 
     scroll-behavior: smooth !important;
 
+    .nav-item {
+      font-weight: 400;
+    }
+
     .human, #human {
      background-color: #f65147;
+      color: white;
     }
 
     .strategy, #strategy {
       background-color: #eaeadd;
+      color: white;
     }
 
     .trade,#trade {
-      background-color: #f1191b;
+      background-color: #6dcbdf;
+      color: white;
     }
 
     .intellectual, #intellectual {
       background-color: #fec452;
+      color: white;
     }
 
     #human, #strategy, #trade, #intellectual {
@@ -221,6 +231,7 @@ onMounted(() => {
       position: sticky;
       top: 0;
       cursor: pointer;
+      font-family: 'EB Garamond',sans-serif;
     }
 
     .main {
@@ -248,7 +259,7 @@ onMounted(() => {
     button {
       cursor: pointer;
       background-color: transparent;
-      width: 250px;
+      width: 260px; /*BUTTON*/
       font-size: 16px;
       line-height: 1em;
       color: black;
