@@ -14,7 +14,7 @@ export default [
         title: 'Seeking Justice: The State of Transnational Corporate Accountability',
         src: 'https://www.yalelawjournal.org/forum/seeking-justice-the-state-of-transnational-corporate-accountability',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/mathias-reding-yfXhqAW5X0c-unsplash.jpg',
-        height: 790,
+        height: 310,
         mediaType: '',
         payWall: '',
         source: 'Yale Law Journal'
@@ -48,5 +48,15 @@ export default [
         mediaType: '',
         payWall: '',
         source: 'Corporate Accountability Lab'
+    },
+    {
+        id: 5,
+        title: 'Hidden Traffic Podcast: Trade Law and Human Rights with Dean Pinkert',
+        src: 'https://www.jdsupra.com/legalnews/hidden-traffic-podcast-trade-law-and-hu-44232/',
+        backgroundImg: 'https://caledoniaadmin.github.io/dpc/vlad-gorshkov-u6-jWHgwd44-unsplash.jpg',
+        height: 470,
+        mediaType: '',
+        payWall: '',
+        source: 'JDSupra'
     }
 ]

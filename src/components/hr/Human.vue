@@ -101,7 +101,7 @@ import humanData from '../../data/human.ts'
     }
     .gallery-item-1 {
       grid-column: 3;
-      grid-row: 1/6;
+      grid-row: 1/3;
 
     }
     .gallery-item-2 {
@@ -121,7 +121,7 @@ import humanData from '../../data/human.ts'
     }
     .gallery-item-5 {
       grid-column: 3;
-      grid-row: 4;
+      grid-row: 3/6;
 
     }
 

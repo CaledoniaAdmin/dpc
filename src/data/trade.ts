@@ -1,7 +1,7 @@
 export default [
     {
         id: 0,
-        title: 'A CRITICAL JUNCTURE FOR US TRADE POLICY',
+        title: 'A Critical Juncture for US Trade Policy',
         src: 'https://www.globaltrademag.com/author/dean-pinkert/',
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/tyler-casey-CkZF0-etxU8-unsplash.jpg',
         height: 150,

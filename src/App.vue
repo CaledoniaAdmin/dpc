@@ -117,7 +117,7 @@ onMounted(() => {
 <template>
   <div v-if="width > 600" class="app-container">
     <div class="navbar-container">
-      <div class="mast" @click="handleNavClick">Dean Pinkert Consulting</div>
+      <div class="mast" @click="handleNavClick">DPC</div>
 
       <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'nav-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
       <button :class="globalState.activeNav === 'trade' ? 'trade' : 'nav-item' " value="trade" @click="handleNavClick">TRADE</button>
@@ -179,7 +179,6 @@ onMounted(() => {
   html {
     scroll-behavior: smooth;
     position: relative;
-    font-family: 'Garamond',sans-serif;
   }
 
   .foost {
@@ -191,8 +190,6 @@ onMounted(() => {
   .app-container {
     width: 100vw;
     height: 100%;
-    font-family: "Times New Roman",sans-serif;
-
 
     scroll-behavior: smooth !important;
 
@@ -254,6 +251,8 @@ onMounted(() => {
       top: 0;
       z-index: 3;
       background: white;
+      font-family: Tahoma , sans-serif;
+      font-weight: 700;
     }
 
     button {
@@ -264,12 +263,6 @@ onMounted(() => {
       line-height: 1em;
       color: black;
       border-right: 0 !important;
-
-      &.active {
-        border-bottom: 5px solid red;
-        border-bottom-right-radius: unset !important;
-        border-bottom-left-radius: unset !important;
-      }
     }
 
     .up-btn {
