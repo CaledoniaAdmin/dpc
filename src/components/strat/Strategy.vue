@@ -22,6 +22,7 @@ import strategyData from '../../data/strategy.ts'
               color: white;`"
              loading="lazy"/>
       </a>
+      <span class="overlay"></span>
     </div>
   </div>
 </template>
@@ -69,5 +70,16 @@ img {
 .linkout {
   font-weight: 400;
   text-decoration: underline;
+}
+
+.overlay {
+  transition: .6s ease;
+  opacity: 0.7;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  
 }
 </style>

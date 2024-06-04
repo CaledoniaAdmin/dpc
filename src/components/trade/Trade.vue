@@ -87,7 +87,7 @@ import tradeData from "../../data/trade.ts";
 
       .overlay {
         transition: .6s ease;
-        opacity: 0;
+        opacity: 0.7;
         position: absolute;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
         height: 100%;
@@ -105,7 +105,6 @@ import tradeData from "../../data/trade.ts";
       }
 
       .overlay:hover {
-        opacity: 0.7;
         box-shadow:  2px 1px 6px 0 #949494;
       }
 
