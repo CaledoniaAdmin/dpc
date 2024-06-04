@@ -15,7 +15,7 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/zana-latif-rSp7jTx_FvI-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'FOSSPANTS'
+        source: 'FossPants'
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/nevergg-DhOPjNWBbZE-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'IP-WATCH'
+        source: 'IP-Watch'
     },
     {
         id: 3,
@@ -33,6 +33,6 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'AXIOS'
+        source: 'Axios'
     }
 ]

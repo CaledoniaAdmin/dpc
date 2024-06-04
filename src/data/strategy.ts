@@ -6,7 +6,7 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/jon-tyson-AN7CTlQaRs8-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'YAHOO'
+        source: 'Yahoo'
     },
     {
         id: 1,
@@ -15,7 +15,7 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/bernd-dittrich-huciLx_BveI-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'BROOKLYN LAW'
+        source: 'Brooklyn Law'
     },
     {
         id: 2,
@@ -24,6 +24,6 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/sean-pollock-PhYq704ffdA-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'TODAY\'S GENERAL COUNSEL'
+        source: 'Today\'s General counsel'
     }
 ]

@@ -7,7 +7,7 @@ export default [
         height: 150,
         mediaType: '',
         payWall: '',
-        source: 'SeafoodSource'
+        source: 'Seafood Source'
     },
     {
         id: 1,
@@ -37,7 +37,7 @@ export default [
         height: 310,
         mediaType: '',
         payWall: '',
-        source: 'SupplyTrace'
+        source: 'Supply Trace'
     },
     {
         id: 4,
