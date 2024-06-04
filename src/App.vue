@@ -324,20 +324,21 @@ onMounted(() => {
 
 
       &.human, #human {
-        background-color: white;
+        background-color: #f65147;
+        color: white;
       }
 
       &.strategy, #strategy {
-        background-color: #d9ebe9;
+        background-color: #eaeadd;
       }
 
       &.trade,#trade {
-        background-color: #2467a0;
+        background-color: #6dcbdf;
         color: white;
       }
 
       &.intellectual, #intellectual {
-        background-color: #1c2159;
+        background-color: #fec452;
         color: white;
       }
     }
