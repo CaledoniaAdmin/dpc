@@ -117,12 +117,16 @@ onMounted(() => {
 <template>
   <div v-if="width > 600" class="app-container">
     <div class="navbar-container">
-      <div class="mast" @click="handleNavClick">DPC</div>
+      <div>
+        <div class="mast-desktop" @click="handleNavClick">DPC</div>
+      </div>
 
-      <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'nav-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
-      <button :class="globalState.activeNav === 'trade' ? 'trade' : 'nav-item' " value="trade" @click="handleNavClick">TRADE</button>
-      <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'nav-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
-      <button :class="globalState.activeNav === 'human' ? 'human' : 'nav-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
+      <div>
+        <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'nav-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
+        <button :class="globalState.activeNav === 'trade' ? 'trade' : 'nav-item' " value="trade" @click="handleNavClick">TRADE</button>
+        <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'nav-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
+        <button :class="globalState.activeNav === 'human' ? 'human' : 'nav-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
+      </div>
 
     </div>
 
@@ -231,6 +235,17 @@ onMounted(() => {
       font-family: 'EB Garamond',sans-serif;
     }
 
+    .mast-desktop {
+      display: flex;
+      align-self: center;
+      position: sticky;
+      top: 5px;
+      margin-left: 10px;
+      font-size: 25px;
+      cursor: pointer;
+      font-family: 'EB Garamond', sans-serif;
+    }
+
     .main {
       min-height: 100vh;
     }
@@ -246,7 +261,7 @@ onMounted(() => {
     .navbar-container {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 3;
