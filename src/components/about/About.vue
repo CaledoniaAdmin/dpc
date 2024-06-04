@@ -32,9 +32,13 @@
         testimony before the ITC and an interagency forced labor committee, televised interviews, and
         publications on a range of topics including human rights violations in U.S.-facing supply
         chains.</p>
-      <audio controls>
-        <source src="https://rr4---sn-4g5edndd.googlevideo.com/videoplayback?expire=1717486545&ei=cW9eZqioDJqL6dsPx6aB2Ac&ip=94.130.97.248&id=o-ADpuURF8bCFaT8yuW_yFox_NT6qsS1M4hqeHIvEnQKIT&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=Uy&mm=31%2C29&mn=sn-4g5edndd%2Csn-4g5e6nss&ms=au%2Crdu&mv=u&mvi=4&pl=27&bui=AbKP-1M9AQO-1rpfLqiPG9JY0_iglC6sXwOFcYiEnz5WiVVyNKhpkVRMs6tfz0SPzVFEuTzYMWUZr4xf&spc=UWF9f3mdUDLR0IDaMdG8yc3snGLaJ-dsCczkMLebY2UKnCOYQ_LdXajtc6FP&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=DQHq_KM14vSj2fQpYe4jNQUQ&rqh=1&gir=yes&clen=25413875&dur=1712.561&lmt=1717069809838792&mt=1717464166&fvip=2&keepalive=yes&c=WEB&sefc=1&txp=6218224&n=V_Gz7sGUVgWJhA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRAIgKXt62GI5TZCnbq8QHuORNkJsK2iAstqlgjbjRhbQ_lECID44wc-Gr3f8YmCVMpxNZtOH1Skri5CO_6EnQqE-LbJw&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl&lsig=AHlkHjAwRQIgepBLcYYQZtVo6LtvXAbYgsXMQeR4IEqsCTDOb_2gqIYCIQCIWVL3DQKGOFfJNrJtf5vvoeGyxf4iKLq4IRShI-sUYw%3D%3D">
-      </audio>
+      <div class="cta-container">
+        <audio controls>
+          <source src="https://rr4---sn-4g5edndd.googlevideo.com/videoplayback?expire=1717486545&ei=cW9eZqioDJqL6dsPx6aB2Ac&ip=94.130.97.248&id=o-ADpuURF8bCFaT8yuW_yFox_NT6qsS1M4hqeHIvEnQKIT&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=Uy&mm=31%2C29&mn=sn-4g5edndd%2Csn-4g5e6nss&ms=au%2Crdu&mv=u&mvi=4&pl=27&bui=AbKP-1M9AQO-1rpfLqiPG9JY0_iglC6sXwOFcYiEnz5WiVVyNKhpkVRMs6tfz0SPzVFEuTzYMWUZr4xf&spc=UWF9f3mdUDLR0IDaMdG8yc3snGLaJ-dsCczkMLebY2UKnCOYQ_LdXajtc6FP&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=DQHq_KM14vSj2fQpYe4jNQUQ&rqh=1&gir=yes&clen=25413875&dur=1712.561&lmt=1717069809838792&mt=1717464166&fvip=2&keepalive=yes&c=WEB&sefc=1&txp=6218224&n=V_Gz7sGUVgWJhA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRAIgKXt62GI5TZCnbq8QHuORNkJsK2iAstqlgjbjRhbQ_lECID44wc-Gr3f8YmCVMpxNZtOH1Skri5CO_6EnQqE-LbJw&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl&lsig=AHlkHjAwRQIgepBLcYYQZtVo6LtvXAbYgsXMQeR4IEqsCTDOb_2gqIYCIQCIWVL3DQKGOFfJNrJtf5vvoeGyxf4iKLq4IRShI-sUYw%3D%3D">
+        </audio>
+        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com">Let's Work Together</a></span>
+      </div>
+
     </div>
   </div>
 </template>
@@ -109,7 +113,7 @@
   }
 
   .hero-text-sentence:nth-child(1) {
-    color: #f65147;
+    color: #eaeadd;
   }
 
   .hero-text-sentence:nth-child(2) {
@@ -118,6 +122,29 @@
 
   .hero-text-sentence:nth-child(3) {
     color: #fec452;
+  }
+
+  .cta-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mailto {
+    margin-left:  15px;
+    display: flex;
+    align-self: center;
+
+    a {
+      color: #f65147;
+      &:hover {
+        color: white;
+        &::after {
+          content: '...';
+        }
+      }
+    }
+
+
   }
 
 </style>
