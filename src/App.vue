@@ -15,6 +15,9 @@ import tradeData from '../src/data/trade.ts'
 import strategyData from '../src/data/strategy.ts'
 import ipData from '../src/data/ip.ts'
 import humanData from '../src/data/human.ts'
+import {useHead} from "unhead";
+
+
 
 const globalState = useGlobalStore()
 
@@ -24,6 +27,11 @@ const scrollHash = ref({}) as any
 
 const now = new Date()
 const currentYear = now.getFullYear()
+
+useHead({
+  title: `Pinkert Trade and Human Rights Consulting Company Page`,
+})
+
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
 const sectionsObjects = [{id: 'Human Rights', data: humanData, key: 'human'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Trade', data: tradeData, key: 'trade'}] as any[]
