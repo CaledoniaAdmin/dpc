@@ -1,8 +1,9 @@
 <script setup lang="ts">
 
   const heroText = [
-      'Dean',
-      'Pinkert',
+      'Pinkert Trade',
+      '&',
+      'Human Rights',
       'Consulting'
   ]
 
@@ -36,7 +37,8 @@
         <audio controls>
           <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
         </audio>
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com">Let's Work Together</a></span>
+        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
 
     </div>
@@ -96,16 +98,15 @@
 
   .hero-text-container {
     position: absolute;
-    bottom: 0;
     height: 80vh;
-    width: 40vw;
+    width: 55vw;
     z-index: 3;
     margin: 0 0 0 15px;
+    bottom: 5px;
   }
 
   .hero-text-sentence {
     color: white;
-    height: 33%;
   }
 
   .hero-text-word {
@@ -113,20 +114,36 @@
   }
 
   .hero-text-sentence:nth-child(1) {
-    color: #eaeadd;
+    color: #6dcbdf;
   }
 
   .hero-text-sentence:nth-child(2) {
-    color: #6dcbdf;
+    color: #eaeadd;
   }
 
   .hero-text-sentence:nth-child(3) {
     color: #fec452;
   }
 
+  .hero-text-sentence:nth-child(4) {
+    color: #f65147;
+  }
+
   .cta-container {
     display: flex;
     flex-direction: row;
+  }
+
+  .linkedin {
+    margin-left:  15px;
+    display: flex;
+    align-self: center;
+
+    a {
+      color: #f65147;
+    }
+
+
   }
 
   .mailto {
@@ -136,14 +153,7 @@
 
     a {
       color: #f65147;
-      &:hover {
-        color: white;
-        &::after {
-          content: '...';
-        }
-      }
     }
-
 
   }
 
