@@ -38,10 +38,12 @@ const handleNavClick = (e: Event) => {
     activeNav: passVal
   })
 
+  const baseHashVal = scrollHash.value[1]
+
   switch (clickValue) {
     case 'intellectual': {
       setState(clickValue)
-      return scrollFn(scrollHash.value[1])
+      return scrollFn(baseHashVal)
     }
     case 'trade': {
       setState(clickValue)
@@ -49,11 +51,11 @@ const handleNavClick = (e: Event) => {
     }
     case 'strategy': {
      setState(clickValue)
-     return scrollFn(scrollHash.value[1] * 3)
+     return scrollFn(baseHashVal * 3)
     }
     case 'human': {
       setState(clickValue)
-      return scrollFn(scrollHash.value[1] * 4)
+      return scrollFn(baseHashVal * 4)
     }
     default:
       setState('mast-desktop')
@@ -289,9 +291,10 @@ onMounted(() => {
 
     .section-header {
       position: sticky;
-      top: 20px;
+      top: 0;
       z-index: 4;
       height: 40px;
+      padding: 0 15px;
       font-weight: 500;
       font-size: 20px !important;
       display: flex;
@@ -320,7 +323,7 @@ onMounted(() => {
     }
 
     .controls {
-      position: sticky;
+      position: absolute;
       margin-left: 80%;
       bottom: 20px;
       z-index: 4;
@@ -333,7 +336,6 @@ onMounted(() => {
       z-index: 4;
     }
     .mobile-header {
-      position: sticky;
       top: 0;
       z-index: 5;
       background-color: white;
