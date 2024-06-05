@@ -241,7 +241,7 @@ onMounted(() => {
       position: sticky;
       top: 5px;
       margin-left: 10px;
-      font-size: 25px;
+      font-size: 20px;
       cursor: pointer;
       font-family: 'EB Garamond', sans-serif;
     }
