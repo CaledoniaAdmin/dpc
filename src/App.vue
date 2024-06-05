@@ -25,68 +25,44 @@ const scrollHash = ref({}) as any
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
 const sectionsObjects = [{id: 'Human Rights', data: humanData, key: 'human'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Trade', data: tradeData, key: 'trade'}] as any[]
 
+const scrollFn = (positionValue: number) => window.scrollTo({
+  top: positionValue,
+  left: 0,
+  behavior: "smooth",
+})
 const handleNavClick = (e: Event) => {
 
-  globalState.$patch({
-    activeNav: (e.target as HTMLButtonElement).value
+  const clickValue =  (e.target as HTMLButtonElement).value
+
+  const setState = (passVal: string)  => globalState.$patch({
+    activeNav: passVal
   })
 
-  switch ((e.target as HTMLButtonElement).value) {
+  switch (clickValue) {
     case 'intellectual': {
-      globalState.$patch({
-        activeNav: (e.target as HTMLButtonElement).value
-      })
-      return window.scrollTo({
-        top: scrollHash.value[1],
-        left: 0,
-        behavior: "smooth",
-      })
+      setState(clickValue)
+      return scrollFn(scrollHash.value[1])
     }
     case 'trade': {
-      globalState.$patch({
-        activeNav: (e.target as HTMLButtonElement).value
-      })
-      return window.scrollTo({
-        top: scrollHash.value[2],
-        left: 0,
-        behavior: "smooth",
-      })
+      setState(clickValue)
+     return scrollFn(scrollHash.value[2])
     }
     case 'strategy': {
-      globalState.$patch({
-        activeNav: (e.target as HTMLButtonElement).value
-      })
-     return window.scrollTo({
-       top: scrollHash.value[1] * 3,
-        left: 0,
-        behavior: "smooth",
-      })
+     setState(clickValue)
+     return scrollFn(scrollHash.value[1] * 3)
     }
     case 'human': {
-      globalState.$patch({
-        activeNav: (e.target as HTMLButtonElement).value
-      })
-      return window.scrollTo({
-        top: scrollHash.value[1] * 4,
-        left: 0,
-        behavior: "smooth",
-      })
+      setState(clickValue)
+      return scrollFn(scrollHash.value[1] * 4)
     }
     default:
-      return window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
+      setState('mast-desktop')
+      return scrollFn(0)
   }
 }
 
 const backToTop = () => {
-  return window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth"
-  })
+  return scrollFn(0)
 }
 
 onMounted(() => {
