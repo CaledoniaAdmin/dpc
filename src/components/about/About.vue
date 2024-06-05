@@ -37,8 +37,8 @@
         <audio controls>
           <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
         </audio>
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
-        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
+        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
 
     </div>
