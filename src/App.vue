@@ -22,6 +22,9 @@ const { width, height } = useWindowSize()
 
 const scrollHash = ref({}) as any
 
+const now = new Date()
+const currentYear = now.getFullYear()
+
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
 const sectionsObjects = [{id: 'Human Rights', data: humanData, key: 'human'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Trade', data: tradeData, key: 'trade'}] as any[]
 
@@ -114,12 +117,12 @@ onMounted(() => {
     <Strategy id="strategy" class="section"/>
     <Human id="human" ref="human" class="section" />
 
-    <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
+    <div class="foost"><span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span></div>
 
   </div>
   <div v-else class="app-container-mobile">
     <div class="mobile-header">
-      <div class="mast">Dean Pinkert Consulting</div>
+      <div class="mast">PT & HRC</div>
     </div>
     <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
       <div :class="`section-header ${page.key}`">{{page.id.toUpperCase()}}</div>
@@ -150,7 +153,7 @@ onMounted(() => {
     <div v-if="false" class="contact">
       <button>MAIL</button>
     </div>
-    <div class="foost"><span>Dean Pinkert Consulting &copy; 2024</span></div>
+    <div class="foost"><span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span></div>
   </div>
 </template>
 
