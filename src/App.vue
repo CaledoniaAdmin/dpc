@@ -118,7 +118,7 @@ onMounted(() => {
   <div v-if="width > 600" class="app-container">
     <div class="navbar-container">
       <div>
-        <div class="mast-desktop" @click="handleNavClick">DPC</div>
+        <div class="mast-desktop" @click="handleNavClick">PT&HRC</div>
       </div>
 
       <div>
