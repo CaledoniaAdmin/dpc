@@ -71,8 +71,6 @@ const backToTop = () => {
 }
 
 onMounted(() => {
-  console.log('App mounted')
-
   window.scrollTo(0,0)
 
   const observer = new IntersectionObserver((entries) => {
@@ -96,7 +94,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="width > 600" class="app-container">
+  <div v-if="width > 900" class="app-container">
     <div class="navbar-container">
       <div>
         <div class="mast-desktop" @click="handleNavClick">PT&HRC</div>
@@ -111,7 +109,7 @@ onMounted(() => {
 
     </div>
 
-    <About id="about" class="section" />
+    <About id="about" class="section" :width="width" />
     <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Trade id="trade" class="section"/>
     <Strategy id="strategy" class="section"/>
@@ -124,6 +122,7 @@ onMounted(() => {
     <div class="mobile-header">
       <div class="mast">PT & HRC</div>
     </div>
+    <About id="about" class="section" :width="width"/>
     <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
       <div :class="`section-header ${page.key}`">{{page.id.toUpperCase()}}</div>
       <div class="card-container" v-for="article in page.data" :key="article.id">
