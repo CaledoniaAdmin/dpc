@@ -25,6 +25,7 @@ const props = defineProps(['width'])
           width="100%"
           loading="lazy"
           height="100%"
+          alt="Large image of Dean Pinkert"
       />
       <span class="overlay"></span>
     </div>
@@ -72,6 +73,7 @@ const props = defineProps(['width'])
         class="portrait-mobile"
         src="https://images.squarespace-cdn.com/content/v1/5810dda3e3df28ce37b58357/1635801209439-FFUCZLQKLS0TSL2CJ33G/signal-2021-11-01-160737_001.jpg?format=1000w"
         loading="lazy"
+        alt="Image of Dean Pinkert"
     />
     <span class="overlay"></span>
   </div>

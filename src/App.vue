@@ -15,7 +15,7 @@ import tradeData from '../src/data/trade.ts'
 import strategyData from '../src/data/strategy.ts'
 import ipData from '../src/data/ip.ts'
 import humanData from '../src/data/human.ts'
-import {useHead} from "unhead";
+import {useSeoMeta} from "unhead";
 
 
 
@@ -28,8 +28,11 @@ const scrollHash = ref({}) as any
 const now = new Date()
 const currentYear = now.getFullYear()
 
-useHead({
-  title: `Pinkert Trade and Human Rights Consulting Company Page`,
+useSeoMeta({
+  bookAuthor: undefined,
+  title: `Pinkert Trade and Human Rights Consulting`,
+  description: 'Pinkert Trade and Human Rights Consulting Company Page',
+  ogTitle: 'Pinkert Trade and Human Rights Consulting'
 })
 
 
