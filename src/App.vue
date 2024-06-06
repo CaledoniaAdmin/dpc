@@ -28,12 +28,12 @@ const scrollHash = ref({}) as any
 const now = new Date()
 const currentYear = now.getFullYear()
 
-useSeoMeta({
-  bookAuthor: undefined,
-  title: `Pinkert Trade and Human Rights Consulting`,
-  description: 'Pinkert Trade and Human Rights Consulting Company Page',
-  ogTitle: 'Pinkert Trade and Human Rights Consulting'
-})
+// useSeoMeta({
+//   title: `Pinkert Trade and Human Rights Consulting`,
+//   description: 'Pinkert Trade and Human Rights Consulting Company Page',
+//   ogTitle: 'Pinkert Trade and Human Rights Consulting',
+//   ogDescription: 'Pinkert Trade and Human Rights Consulting Company Page'
+// })
 
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
