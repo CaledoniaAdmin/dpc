@@ -102,7 +102,8 @@ const props = defineProps(['width'])
 
       .hero-text-word-mobile {
         font-size: 60px;
-        height: 80px;
+        height: 25%;
+        width: 100vw;
       }
 
 
