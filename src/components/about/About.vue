@@ -3,10 +3,10 @@
 const props = defineProps(['width'])
 
   const heroText = [
-      'Pinkert Trade',
+      'PINKERT TRADE',
       '&',
-      'Human Rights',
-      'Consulting'
+      'HUMAN RIGHTS',
+      'CONSULTING'
   ]
 
 </script>
@@ -82,6 +82,7 @@ const props = defineProps(['width'])
 <style scoped>
   .main {
     height: 100%;
+    width: 100%;
   }
 
   .main-mobile {
@@ -212,7 +213,7 @@ const props = defineProps(['width'])
     position: absolute;
     height: 80vh;
     width: 55vw;
-    z-index: 3;
+    z-index: 1;
     margin: 0 0 0 15px;
     bottom: 5px;
   }

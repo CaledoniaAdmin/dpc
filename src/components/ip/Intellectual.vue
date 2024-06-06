@@ -43,7 +43,7 @@ onMounted(() => {
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>
-              <span>source: <span class="source">{{image.source}}</span></span>
+              <span><span class="source">{{image.source}}</span></span>
               <span class="linkout">Read More...</span>
 
             </a>
@@ -73,6 +73,8 @@ a {
 .column-container {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+  width: 100%;
 }
 
 .column {
@@ -80,22 +82,22 @@ a {
   height: 100vh;
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100%);
+  transform: translateX(0);
   transition: all 1s;
 }
 
 .column:nth-child(1) {
-  transition-delay: 100ms;
+  transition-delay: 200ms;
 }
 
 .column:nth-child(2) {
-  transition-delay: 200ms;
-}
-.column:nth-child(3) {
   transition-delay: 400ms;
 }
-.column:nth-child(4) {
+.column:nth-child(3) {
   transition-delay: 600ms;
+}
+.column:nth-child(4) {
+  transition-delay: 800ms;
 }
 
 .overlay {
@@ -109,6 +111,10 @@ a {
 
   .title {
     font-weight: 600;
+  }
+
+  .source {
+    font-style: italic;
   }
 
   .linkout {

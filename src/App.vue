@@ -44,13 +44,13 @@ const scrollFn = (positionValue: number) => window.scrollTo({
   left: 0,
   behavior: "smooth",
 })
+
+const setState = (passVal: string)  => globalState.$patch({
+  activeNav: passVal
+})
 const handleNavClick = (e: Event) => {
 
   const clickValue =  (e.target as HTMLButtonElement).value
-
-  const setState = (passVal: string)  => globalState.$patch({
-    activeNav: passVal
-  })
 
   const baseHashVal = scrollHash.value[1]
 
@@ -82,11 +82,11 @@ const backToTop = () => {
 }
 
 onMounted(() => {
-  window.scrollTo(0,0)
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        setState(entry.target.id)
         entry.target.classList.add('show')
       } else {
         entry.target.classList.remove('show')
@@ -101,6 +101,10 @@ onMounted(() => {
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
   pageElementArr.forEach((el:any) => observer.observe(el))
+
+   return setTimeout(() => {
+        return document.documentElement.scrollTop = 0;
+      }, 200);
 })
 </script>
 
@@ -140,7 +144,7 @@ onMounted(() => {
         <a :href="article.src" target="_blank">
           <span class="card">
             <span class="card-title">{{ article.title }}</span>
-            <span class="source">source: <span class="source">{{article.source}}</span></span>
+            <span class="source"><span class="source">{{article.source}}</span></span>
             <span class="linkout">Read More...</span>
           </span>
 

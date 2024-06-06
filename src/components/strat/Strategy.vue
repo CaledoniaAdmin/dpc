@@ -9,7 +9,7 @@ import strategyData from '../../data/strategy.ts'
       <a :href="article.src" target="_blank">
               <span class="card">
         <span>{{ article.title }}</span>
-        <span>source: <span class="source">{{article.source}}</span></span>
+        <span><span class="source">{{article.source}}</span></span>
         <span class="linkout">Read More...</span>
       </span>
 
@@ -81,5 +81,12 @@ img {
   width: 100%;
   text-align: center;
   
+}
+
+.title {
+}
+
+.source {
+  font-style: italic;
 }
 </style>

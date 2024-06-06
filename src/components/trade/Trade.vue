@@ -24,7 +24,7 @@ import tradeData from "../../data/trade.ts";
           <div class="overlay">
             <a :href="image.src" target="_blank">
               <span class="title">{{image.title}}</span>
-              <span>source: <span class="source">{{image.source}}</span></span>
+              <span><span class="source">{{image.source}}</span></span>
               <span class="linkout">Read More...</span>
 
             </a>
@@ -77,6 +77,10 @@ import tradeData from "../../data/trade.ts";
 
         .title {
           font-weight: 600;
+        }
+
+        .source {
+          font-style: italic;
         }
 
         .linkout {
