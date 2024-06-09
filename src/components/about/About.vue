@@ -211,11 +211,12 @@ const props = defineProps(['width'])
 
   .hero-text-container {
     position: absolute;
-    height: 80vh;
+    height: 90vh;
     width: 55vw;
     z-index: 1;
     margin: 0 0 0 15px;
     bottom: 5px;
+    font-size: 85px;
   }
 
   .hero-text-sentence {
@@ -223,7 +224,7 @@ const props = defineProps(['width'])
   }
 
   .hero-text-word {
-    font-size: 100px;
+    font-size: 1em;
   }
 
   .hero-text-sentence:nth-child(1) {
