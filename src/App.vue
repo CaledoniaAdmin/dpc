@@ -15,7 +15,7 @@ import tradeData from '../src/data/trade.ts'
 import strategyData from '../src/data/strategy.ts'
 import ipData from '../src/data/ip.ts'
 import humanData from '../src/data/human.ts'
-import {useSeoMeta} from "unhead";
+// import {useSeoMeta} from "unhead";
 
 
 
@@ -364,7 +364,8 @@ onMounted(() => {
     }
 
     .section {
-      height: 25vw;
+      /* height: 25vw; */
+      height: 100vh;
       width: 100vw;
     }
 

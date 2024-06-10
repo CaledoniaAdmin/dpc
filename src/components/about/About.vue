@@ -47,7 +47,7 @@ const props = defineProps(['width'])
     <span class="overlay"></span>
 
   </div>
-  <div class="main-mobile" v-else>
+  <div class="container__mobile" v-else> <!-- container__mobile -->
     <div class="hero-text-container-mobile">
       <div class="hero-text-sentence-mobile" v-for="word in heroText">
         <div class="hero-text-word-mobile">{{word}}</div>
@@ -189,10 +189,11 @@ const props = defineProps(['width'])
 
   }
 
-  .main-mobile {
-    height: 100vh !important;
+
+  .container__mobile {
+    height: 100vh;
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
 
     img {
       position: absolute;
@@ -244,10 +245,10 @@ const props = defineProps(['width'])
 
       .mailto {
 
-         a {
-           width: 30px;
-           height: 30px;
-         }
+        a {
+          width: 30px;
+          height: 30px;
+        }
         img {
           height: 30px;
           width: 30px;
@@ -306,5 +307,6 @@ const props = defineProps(['width'])
 
     }
   }
+
 
 </style>
