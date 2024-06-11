@@ -14,8 +14,8 @@ const props = defineProps(['width'])
 <template>
   <div class="container__desktop" v-if="props.width > 900">
     <div class="container__left">
-      <div class="container__left--herotext">
-        <div class="container__left--herotext-sentence" v-for="word in heroText">
+      <div class="container__left--hero-text">
+        <div class="container__left--hero-text-sentence" v-for="word in heroText">
           <div class="">{{word}}</div>
         </div>
       </div>
@@ -45,12 +45,11 @@ const props = defineProps(['width'])
 
     </div>
     <span class="overlay"></span>
-
   </div>
   <div class="container__mobile" v-else> <!-- container__mobile -->
-    <div class="hero-text-container-mobile">
-      <div class="hero-text-sentence-mobile" v-for="word in heroText">
-        <div class="hero-text-word-mobile">{{word}}</div>
+    <div class="container__mobile--hero-text"> <!-- container__mobile--hero-text -->
+      <div class="container__mobile--hero-text-sentence" v-for="word in heroText"> <!-- container__mobile--hero-text-sentence -->
+        <div class="container__mobile--hero-text">{{word}}</div> <!-- container__mobile--hero-text -->
       </div>
     </div>
     <div class="content-mobile">
@@ -88,7 +87,7 @@ const props = defineProps(['width'])
 
     .container__left {
 
-      .container__left--herotext {
+      .container__left--hero-text {
         position: absolute;
         bottom: 5px;
         height: 90vh;
@@ -98,23 +97,23 @@ const props = defineProps(['width'])
         font-size: 85px;
       }
 
-      .container__left--herotext-sentence {
+      .container__left--hero-text-sentence {
         font-size: 1em;
       }
 
-      .container__left--herotext-sentence:nth-child(1) {
+      .container__left--hero-text-sentence:nth-child(1) {
         color: #6dcbdf;
       }
 
-      .container__left--herotext-sentence:nth-child(2) {
+      .container__left--hero-text-sentence:nth-child(2) {
         color: #eaeadd;
       }
 
-      .container__left--herotext-sentence:nth-child(3) {
+      .container__left--hero-text-sentence:nth-child(3) {
         color: #fec452;
       }
 
-      .container__left--herotext-sentence:nth-child(4) {
+      .container__left--hero-text-sentence:nth-child(4) {
         color: #f65147;
       }
 
@@ -189,7 +188,6 @@ const props = defineProps(['width'])
 
   }
 
-
   .container__mobile {
     height: 100vh;
     display: flex;
@@ -202,30 +200,30 @@ const props = defineProps(['width'])
       object-fit: cover;
     }
 
-    .hero-text-container-mobile {
+    .container__mobile--hero-text {
       margin-top: 20px;
       z-index: 2;
 
-      .hero-text-word-mobile {
+
+      .container__mobile--hero-text-sentence {
         font-size: 60px;
         height: 25%;
         width: 100vw;
       }
 
-
-      .hero-text-sentence-mobile:nth-child(1) {
+      .container__mobile--hero-text-sentence:nth-child(1) {
         color: #6dcbdf;
       }
 
-      .hero-text-sentence-mobile:nth-child(2) {
+      .container__mobile--hero-text-sentence:nth-child(2) {
         color: #eaeadd;
       }
 
-      .hero-text-sentence-mobile:nth-child(3) {
+      .container__mobile--hero-text-sentence:nth-child(3) {
         color: #fec452;
       }
 
-      .hero-text-sentence-mobile:nth-child(4) {
+      .container__mobile--hero-text-sentence:nth-child(4) {
         color: #f65147;
       }
     }
