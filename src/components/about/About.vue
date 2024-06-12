@@ -80,7 +80,6 @@ const props = defineProps(['width'])
 </template>
 
 <style scoped>
-
   .container__desktop {
     min-height: 100vh;
     width: 100%;
@@ -292,6 +291,4 @@ const props = defineProps(['width'])
 
 
   }
-
-
 </style>
