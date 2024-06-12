@@ -109,17 +109,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="width > 900" class="app-container">
-    <div class="navbar-container">
+  <div v-if="width > 900" class="container__app--desktop">
+    <div class="container__app--desktop--navbar-container">
       <div>
-        <div class="mast-desktop" @click="handleNavClick">PT&HRC</div>
+        <div class="container__mast--desktop" @click="handleNavClick">PT&HRC</div>
       </div>
 
       <div>
-        <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'nav-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
-        <button :class="globalState.activeNav === 'trade' ? 'trade' : 'nav-item' " value="trade" @click="handleNavClick">TRADE</button>
-        <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'nav-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
-        <button :class="globalState.activeNav === 'human' ? 'human' : 'nav-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
+        <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'container__app--desktop--navbar-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
+        <button :class="globalState.activeNav === 'trade' ? 'trade' : 'container__app--desktop--navbar-item' " value="trade" @click="handleNavClick">TRADE</button>
+        <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'container__app--desktop--navbar-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
+        <button :class="globalState.activeNav === 'human' ? 'human' : 'container__app--desktop--navbar-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
       </div>
 
     </div>
@@ -130,7 +130,9 @@ onMounted(() => {
     <Strategy id="strategy" class="section"/>
     <Human id="human" ref="human" class="section" />
 
-    <div class="foost"><span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span></div>
+    <div class="container__footer--desktop"><!-- container__footer--desktop -->
+      <span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span>
+    </div>
 
   </div>
   <div v-else class="app-container-mobile">
@@ -180,19 +182,11 @@ onMounted(() => {
     position: relative;
   }
 
-  .foost {
-    display: flex;
-    justify-content: center;
-  }
-
-
-  .app-container {
+  .container__app--desktop {
     width: 100vw;
     height: 100%;
-
-    scroll-behavior: smooth !important;
-
-    .nav-item {
+    
+    .container__app--desktop--navbar-item {
       font-weight: 400;
     }
 
@@ -221,16 +215,7 @@ onMounted(() => {
       cursor: pointer;
     }
 
-    .mast {
-      display: flex;
-      align-self: center;
-      position: sticky;
-      top: 0;
-      cursor: pointer;
-      font-family: 'EB Garamond',sans-serif;
-    }
-
-    .mast-desktop {
+    .container__mast--desktop {
       display: flex;
       align-self: center;
       position: sticky;
@@ -241,19 +226,7 @@ onMounted(() => {
       font-family: 'EB Garamond', sans-serif;
     }
 
-    .main {
-      min-height: 100vh;
-    }
-
-    .clients {
-      height: 75px;
-    }
-
-    .footer {
-      height: 100%;
-    }
-
-    .navbar-container {
+    .container__app--desktop--navbar-container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -275,13 +248,6 @@ onMounted(() => {
       border-right: 0 !important;
     }
 
-    .up-btn {
-      position: sticky;
-      bottom: 0;
-      margin-left: 80%;
-
-    }
-
     .show {
       opacity: 1;
     }
@@ -294,6 +260,12 @@ onMounted(() => {
         transition: all 1s;
       }
     }
+
+    .container__footer--desktop {
+      display: flex;
+      justify-content: center;
+    }
+
   }
 
 
@@ -369,6 +341,14 @@ onMounted(() => {
       width: 100vw;
     }
 
+    .mast {
+      display: flex;
+      align-self: center;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      font-family: 'EB Garamond',sans-serif;
+    }
 
 
     a {

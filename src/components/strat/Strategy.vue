@@ -29,7 +29,7 @@ import strategyData from '../../data/strategy.ts'
 
 <style scoped>
 .main {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
