@@ -46,13 +46,13 @@ const props = defineProps(['width'])
     </div>
     <span class="overlay"></span>
   </div>
-  <div class="container__mobile" v-else> <!-- container__mobile -->
+  <div class="container__mobile" v-else>
     <div class="container__mobile--hero-text"> <!-- container__mobile--hero-text -->
       <div class="container__mobile--hero-text-sentence" v-for="word in heroText"> <!-- container__mobile--hero-text-sentence -->
         <div class="container__mobile--hero-text">{{word}}</div> <!-- container__mobile--hero-text -->
       </div>
     </div>
-    <div class="content-mobile">
+    <div class="container__mobile--bio-cta-container">
       <p>An Innovator in international trade and human rights policy. Since departing from the
         International Trade Commission (“ITC”) in 2017 after ten years as a Commissioner (with two
         years as presidentially designated Vice Chairman), involvement in public debate has included
@@ -61,7 +61,7 @@ const props = defineProps(['width'])
         chains.
       </p>
 
-      <div class="cta-container">
+      <div class="container__mobile--cta-container">
         <audio controls>
           <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
         </audio>
@@ -142,7 +142,7 @@ const props = defineProps(['width'])
     }
 
     .container__bio--content {
-      background: black;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
       padding: 10px;
     }
 
@@ -201,13 +201,10 @@ const props = defineProps(['width'])
     }
 
     .container__mobile--hero-text {
-      margin-top: 20px;
       z-index: 2;
-
 
       .container__mobile--hero-text-sentence {
         font-size: 60px;
-        height: 25%;
         width: 100vw;
       }
 
@@ -217,6 +214,7 @@ const props = defineProps(['width'])
 
       .container__mobile--hero-text-sentence:nth-child(2) {
         color: #eaeadd;
+        height: 65px;
       }
 
       .container__mobile--hero-text-sentence:nth-child(3) {
@@ -228,11 +226,12 @@ const props = defineProps(['width'])
       }
     }
 
-    .content-mobile {
+    .container__mobile--bio-cta-container {
       z-index: 2;
 
       p {
         color: white;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
         font-size: 14px;
         padding: 3px 5px;
       }
@@ -241,28 +240,15 @@ const props = defineProps(['width'])
         width: 250px;
       }
 
-      .mailto {
-
-        a {
-          width: 30px;
-          height: 30px;
-        }
-        img {
-          height: 30px;
-          width: 30px;
-        }
+      a {
+        width: 30px;
+        height: 30px;
+      }
+      img {
+        height: 30px;
+        width: 30px;
       }
 
-      .linkedin {
-        a {
-          width: 30px;
-          height: 30px;
-        }
-        img {
-          height: 30px;
-          width: 30px;
-        }
-      }
     }
 
     .overlay {
@@ -276,34 +262,35 @@ const props = defineProps(['width'])
       text-align: center;
     }
 
-    .cta-container {
+    .container__mobile--cta-container {
       display: flex;
       flex-direction: row;
-    }
+
+      .linkedin {
+        margin-left:  15px;
+        display: flex;
+        align-self: center;
+
+        a {
+          color: #f65147;
+        }
 
 
-    .linkedin {
-      margin-left:  15px;
-      display: flex;
-      align-self: center;
-
-      a {
-        color: #f65147;
       }
 
+      .mailto {
+        margin-left:  15px;
+        display: flex;
+        align-self: center;
 
-    }
+        a {
+          color: #f65147;
+        }
 
-    .mailto {
-      margin-left:  15px;
-      display: flex;
-      align-self: center;
-
-      a {
-        color: #f65147;
       }
-
     }
+
+
   }
 
 
