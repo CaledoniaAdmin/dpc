@@ -47,9 +47,9 @@ const props = defineProps(['width'])
     <span class="overlay"></span>
   </div>
   <div class="container__mobile" v-else>
-    <div class="container__mobile--hero-text"> <!-- container__mobile--hero-text -->
-      <div class="container__mobile--hero-text-sentence" v-for="word in heroText"> <!-- container__mobile--hero-text-sentence -->
-        <div class="container__mobile--hero-text">{{word}}</div> <!-- container__mobile--hero-text -->
+    <div class="container__mobile--hero-text">
+      <div class="container__mobile--hero-text-sentence" v-for="word in heroText">
+        <div class="container__mobile--hero-text">{{word}}</div>
       </div>
     </div>
     <div class="container__mobile--bio-cta-container">
