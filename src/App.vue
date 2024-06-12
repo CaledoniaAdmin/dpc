@@ -135,13 +135,13 @@ onMounted(() => {
     </div>
 
   </div>
-  <div v-else class="app-container-mobile">
-    <div class="mobile-header">
-      <div class="mast">PT & HRC</div>
+  <div v-else class="container__app--mobile">
+    <div class="container__header--mobile">
+      <div class="container__mast-mobile">PT & HRC</div>
     </div>
     <About id="about" class="section" :width="width"/>
-    <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
-      <div :class="`section-header ${page.key}`">{{page.id.toUpperCase()}}</div>
+    <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">  <!-- container__header--mobile -->
+      <div :class="`header__section--mobile ${page.key}`">{{page.id.toUpperCase()}}</div>
       <div class="card-container" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
           <span class="card">
@@ -269,7 +269,7 @@ onMounted(() => {
   }
 
 
-  .app-container-mobile {
+  .container__app--mobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,8 +277,7 @@ onMounted(() => {
     height: 100%;
     position: relative;
 
-
-    .section-header {
+    .header__section--mobile {
       position: sticky;
       top: 0;
       z-index: 4;
@@ -324,24 +323,26 @@ onMounted(() => {
       bottom: 80%;
       z-index: 4;
     }
-    .mobile-header {
+
+    .container__header--mobile {
       top: 0;
       z-index: 5;
       background-color: white;
-      .mast {
+
+      .container__mast-mobile {
         display: flex;
         flex-direction: row;
         justify-content: center;
       }
+
     }
 
     .section {
-      /* height: 25vw; */
       height: 100vh;
       width: 100vw;
     }
 
-    .mast {
+    .container__mast-mobile {
       display: flex;
       align-self: center;
       position: sticky;
