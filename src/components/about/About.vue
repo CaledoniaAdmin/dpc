@@ -141,7 +141,7 @@ const props = defineProps(['width'])
     }
 
     .container__bio--content {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
       padding: 10px;
     }
 
@@ -230,7 +230,7 @@ const props = defineProps(['width'])
 
       p {
         color: white;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
         font-size: 14px;
         padding: 3px 5px;
       }
