@@ -140,9 +140,9 @@ onMounted(() => {
       <div class="container__mast-mobile">PT & HRC</div>
     </div>
     <About id="about" class="section" :width="width"/>
-    <div class="mobile-content" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">  <!-- container__header--mobile -->
+    <div class="container__content--mobile" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
       <div :class="`header__section--mobile ${page.key}`">{{page.id.toUpperCase()}}</div>
-      <div class="card-container" v-for="article in page.data" :key="article.id">
+      <div class="container__card--mobile" v-for="article in page.data" :key="article.id">   <!-- container__card--mobile -->
         <a :href="article.src" target="_blank">
           <span class="card">
             <span class="card-title">{{ article.title }}</span>
@@ -268,7 +268,6 @@ onMounted(() => {
 
   }
 
-
   .container__app--mobile {
     display: flex;
     flex-direction: column;
@@ -365,37 +364,40 @@ onMounted(() => {
       object-fit: contain;
     }
 
-    .card-container {
+    .container__card--mobile {
       position: relative;
       height: 25vh;
       overflow: hidden;
+
+      .card {
+        position: absolute;
+        height: 25vh;
+        width: 100%;
+        z-index: 1;
+        color: white;
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.86));
+
+        .card-title {
+          width: 88vw;
+        }
+
+        .source {
+          padding-top: 15px;
+        }
+
+        .linkout {
+          font-weight: 400;
+          text-decoration: underline;
+          margin-top: 15px;
+        }
+      }
+
     }
 
-    .card {
-      position: absolute;
-      height: 25vh;
-      width: 100%;
-      z-index: 1;
-      color: white;
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.86));
 
-      .card-title {
-        width: 88vw;
-      }
-
-      .source {
-        padding-top: 15px;
-      }
-
-      .linkout {
-        font-weight: 400;
-        text-decoration: underline;
-        margin-top: 15px;
-      }
-    }
   }
 
 </style>
