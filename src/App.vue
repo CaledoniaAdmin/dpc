@@ -378,6 +378,7 @@ onMounted(() => {
       position: relative;
       height: 25vh;
       overflow: hidden;
+      margin-bottom: 5px;
 
       .card {
         position: absolute;

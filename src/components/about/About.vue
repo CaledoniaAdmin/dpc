@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const open = ref(false)
 
 const props = defineProps(['width'])
 
@@ -39,12 +42,21 @@ const props = defineProps(['width'])
         <audio controls>
           <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
         </audio>
+        <span class="info">
+          <span @click="open = true">
+            <img src="/info.svg" width="30" height="30" alt="info icon">
+          </span>
+        </span>
         <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
         <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
 
     </div>
     <span class="overlay"></span>
+    <div v-if="open" class="modal">
+      <p>Hear Dean's story in his own words on the podcast below</p>
+      <button @click="open = false">Close</button>
+    </div>
   </div>
   <div class="container__mobile" v-else>
     <div class="container__mobile--hero-text">
@@ -65,9 +77,13 @@ const props = defineProps(['width'])
         <audio controls>
           <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
         </audio>
+        <span class="info">
+            <img @click="open = true"  src="/info.svg" width="30" height="30" alt="info icon">
+          </span>
         <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
         <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
+
     </div>
     <img
         class="portrait-mobile"
@@ -76,6 +92,10 @@ const props = defineProps(['width'])
         alt="Image of Dean Pinkert"
     />
     <span class="overlay"></span>
+    <div v-if="open" class="modal">
+      <p>Hear Dean's story in his own words on the podcast below</p>
+      <button @click="open = false">Close</button>
+    </div>
   </div>
 </template>
 
@@ -149,7 +169,7 @@ const props = defineProps(['width'])
       display: flex;
       flex-direction: row;
 
-      .linkedin {
+      .info {
         margin-left:  15px;
         display: flex;
         align-self: center;
@@ -158,6 +178,16 @@ const props = defineProps(['width'])
           color: #f65147;
         }
 
+      }
+
+      .linkedin {
+        margin-left:  15px;
+        display: flex;
+        align-self: center;
+
+        a {
+          color: #f65147;
+        }
 
       }
 
@@ -265,6 +295,26 @@ const props = defineProps(['width'])
       display: flex;
       flex-direction: row;
 
+      .info {
+        width: 30px;
+        height: 30px;
+        margin-left:  15px;
+        display: flex;
+        align-self: center;
+
+        span {
+          width: 30px;
+          height: 30px;
+          color: #f65147;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+      }
+
       .linkedin {
         margin-left:  15px;
         display: flex;
@@ -273,7 +323,6 @@ const props = defineProps(['width'])
         a {
           color: #f65147;
         }
-
 
       }
 
@@ -290,5 +339,23 @@ const props = defineProps(['width'])
     }
 
 
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 999;
+    top: 40%;
+    left: 30%;
+    width: 200px;
+    color: white;
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
+
+    button {
+      margin-left: 25%;
+      margin-bottom: 10%;
+      background-color: white;
+      color: black;
+    }
   }
 </style>
