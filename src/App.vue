@@ -83,16 +83,23 @@ const backToTop = () => {
 
 onMounted(() => {
 
+  const options = {
+    threshold: .50
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setState(entry.target.id)
         entry.target.classList.add('show')
+        setState(entry.target.id)
+        return
       } else {
         entry.target.classList.remove('show')
+        return
       }
     })
-  })
+
+  }, options)
 
   const pageElementArr = document.querySelector('.section') ? Array.from(document.querySelectorAll('.section')) : Array.from(document.querySelectorAll('.mobile-content'))
 
@@ -100,6 +107,7 @@ onMounted(() => {
     console.log('value: ', !!value)
     return {...acc, [idx]: idx * Number(height.value) || 0}
   })
+
   pageElementArr.forEach((el:any) => observer.observe(el))
 
    return setTimeout(() => {
@@ -130,7 +138,7 @@ onMounted(() => {
     <Strategy id="strategy" class="section"/>
     <Human id="human" ref="human" class="section" />
 
-    <div class="container__footer--desktop"><!-- container__footer--desktop -->
+    <div class="container__footer--desktop">
       <span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span>
     </div>
 
@@ -142,7 +150,7 @@ onMounted(() => {
     <About id="about" class="section" :width="width"/>
     <div class="container__content--mobile" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
       <div :class="`header__section--mobile ${page.key}`">{{page.id.toUpperCase()}}</div>
-      <div class="container__card--mobile" v-for="article in page.data" :key="article.id">   <!-- container__card--mobile -->
+      <div class="container__card--mobile" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
           <span class="card">
             <span class="card-title">{{ article.title }}</span>
@@ -169,7 +177,9 @@ onMounted(() => {
     <div v-if="false" class="contact">
       <button>MAIL</button>
     </div>
-    <div class="foost"><span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span></div>
+    <div class="container__footer--mobile">
+      <span>Pinkert Trade & Human Rights Consulting &copy; {{ currentYear }}</span>
+    </div>
   </div>
 </template>
 
