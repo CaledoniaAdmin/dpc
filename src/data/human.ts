@@ -57,6 +57,7 @@ export default [
         height: 470,
         mediaType: '',
         payWall: '',
-        source: 'JDSupra'
+        source: 'JDSupra',
+        audio: 'https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2'
     }
 ]

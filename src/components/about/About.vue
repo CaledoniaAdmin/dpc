@@ -39,14 +39,6 @@ const props = defineProps(['width'])
         publications on a range of topics including human rights violations in U.S.-facing supply
         chains.</p>
       <div class="container__cta--desktop">
-        <audio controls>
-          <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
-        </audio>
-        <span class="info">
-          <span @click="open = true">
-            <img src="/info.svg" width="30" height="30" alt="info icon">
-          </span>
-        </span>
         <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
         <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>

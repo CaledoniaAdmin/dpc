@@ -57,15 +57,16 @@ const handleNavClick = (e: Event) => {
   switch (clickValue) {
     case 'intellectual': {
       setState(clickValue)
-      return scrollFn(baseHashVal)
+      return scrollFn(baseHashVal * 3)
     }
     case 'trade': {
       setState(clickValue)
-     return scrollFn(scrollHash.value[2])
+      return scrollFn(baseHashVal)
     }
     case 'strategy': {
      setState(clickValue)
-     return scrollFn(baseHashVal * 3)
+      return scrollFn(scrollHash.value[2])
+
     }
     case 'human': {
       setState(clickValue)
@@ -124,18 +125,18 @@ onMounted(() => {
       </div>
 
       <div>
-        <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'container__app--desktop--navbar-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
         <button :class="globalState.activeNav === 'trade' ? 'trade' : 'container__app--desktop--navbar-item' " value="trade" @click="handleNavClick">TRADE</button>
         <button :class="globalState.activeNav === 'strategy' ? 'strategy' : 'container__app--desktop--navbar-item' " value="strategy" @click="handleNavClick">AGENCY STRATEGY</button>
+        <button :class="globalState.activeNav === 'intellectual' ? 'intellectual' : 'container__app--desktop--navbar-item' " value="intellectual" @click="handleNavClick">INTELLECTUAL PROPERTY</button>
         <button :class="globalState.activeNav === 'human' ? 'human' : 'container__app--desktop--navbar-item' "  value="human" @click="handleNavClick">HUMAN RIGHTS</button>
       </div>
 
     </div>
 
     <About id="about" class="section" :width="width" />
-    <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Trade id="trade" class="section"/>
     <Strategy id="strategy" class="section"/>
+    <Intellectual id="intellectual" ref="intellectual" class="section" :height="height" :width="width" :scrollHash="scrollHash"/>
     <Human id="human" ref="human" class="section" />
 
     <div class="container__footer--desktop">
@@ -201,22 +202,22 @@ onMounted(() => {
     }
 
     .human, #human {
-     background-color: #f65147;
-      color: white;
+     background-color: #4D4397;
+     color: white;
     }
 
     .strategy, #strategy {
-      background-color: #eaeadd;
+      background-color: #140B00;
       color: white;
     }
 
     .trade,#trade {
-      background-color: #6dcbdf;
+      background-color:  #41A9DF;
       color: white;
     }
 
     .intellectual, #intellectual {
-      background-color: #fec452;
+      background-color: #70C6BE;
       color: white;
     }
 

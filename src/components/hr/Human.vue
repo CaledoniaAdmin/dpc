@@ -24,7 +24,10 @@ import humanData from '../../data/human.ts'
               <span class="title">{{image.title}}</span>
               <span><span class="source">{{image.source}}</span></span>
               <span class="linkout">Read More...</span>
-
+              <span v-if="image.audio" class="audio-banner">Here Dean tell his story below</span>
+              <audio v-if="image.audio" controls>
+                <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
+              </audio>
             </a>
           </div>
         </div>
@@ -36,7 +39,7 @@ import humanData from '../../data/human.ts'
 <style scoped>
 
 .main {
-  height: 100%;
+  height: 100vh;
 
   .gallery {
     display: grid;
@@ -63,6 +66,10 @@ import humanData from '../../data/human.ts'
         height: 100%;
         justify-content: center;
         align-items: center;
+
+       & > * {
+          padding: 0 18px;
+        }
       }
     }
 
@@ -131,6 +138,10 @@ import humanData from '../../data/human.ts'
     .gallery-item-6 {
       grid-column: 2;
       grid-row: 4;
+    }
+
+    .audio-banner {
+      margin-top: 25px;
     }
   }
 }
