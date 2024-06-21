@@ -37,7 +37,7 @@ const currentYear = now.getFullYear()
 
 
 const sectionsArray = [tradeData, humanData, strategyData, ipData] as any[]
-const sectionsObjects = [{id: 'Human Rights', data: humanData, key: 'human'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Trade', data: tradeData, key: 'trade'}] as any[]
+const sectionsObjects = [{id: 'Trade', data: tradeData, key: 'trade'}, {id: 'Agency Strategy', data: strategyData, key: 'strategy'}, {id: 'Intellectual Property', data: ipData, key: 'intellectual'}, {id: 'Human Rights', data: humanData, key: 'human'}] as any[]
 
 const scrollFn = (positionValue: number) => window.scrollTo({
   top: positionValue,
@@ -147,11 +147,8 @@ onMounted(() => {
 
   </div>
   <div v-else class="container__app--mobile">
-    <div class="container__header--mobile">
-      <div class="container__mast-mobile">PT & HRC</div>
-    </div>
     <About id="about" class="section" :width="width"/>
-    <div class="container__content--mobile" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
+    <div :class="`container__content--mobile ${page.id.toLowerCase()}`" v-for="(page, index) in sectionsObjects" :key="sectionsArray[index].id">
       <div :class="`header__section--mobile ${page.key}`">{{page.id.toUpperCase()}}</div>
       <div class="container__card--mobile" v-for="article in page.data" :key="article.id">
         <a :href="article.src" target="_blank">
@@ -304,21 +301,22 @@ onMounted(() => {
 
 
       &.human, #human {
-        background-color: #f65147;
+        background-color: #4D4397;
         color: white;
       }
 
       &.strategy, #strategy {
-        background-color: #eaeadd;
+        background-color: black;
+        color: white;
       }
 
       &.trade,#trade {
-        background-color: #6dcbdf;
+        background-color: #41A9DF;
         color: white;
       }
 
       &.intellectual, #intellectual {
-        background-color: #fec452;
+        background-color: #70C6BE;
         color: white;
       }
     }
@@ -401,6 +399,7 @@ onMounted(() => {
 
         .source {
           padding-top: 15px;
+          font-style: italic;
         }
 
         .linkout {

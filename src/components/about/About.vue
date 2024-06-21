@@ -60,31 +60,13 @@ const heroText = [
     </div>
   </div>
   <div class="container__mobile" v-else>
-    <div class="container__mobile--hero-text">
-      <div class="container__mobile--hero-text-sentence" v-for="word in heroText">
-        <div class="container__mobile--hero-text">{{word}}</div>
+    <div class="container__main-branding">
+      <div class="container__main-branding-text">
+        <div class="container__left--hero-text-sentence" v-for="word in heroText">
+          <div class="">{{word}}</div>
+        </div>
       </div>
-    </div>
-    <div class="container__mobile--bio-cta-container">
-      <p>An Innovator in international trade and human rights policy. Since departing from the
-        International Trade Commission (“ITC”) in 2017 after ten years as a Commissioner (with two
-        years as presidentially designated Vice Chairman), involvement in public debate has included
-        testimony before the ITC and an interagency forced labor committee, televised interviews, and
-        publications on a range of topics including human rights violations in U.S.-facing supply
-        chains.
-      </p>
-
-      <div class="container__mobile--cta-container">
-        <audio controls>
-          <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
-        </audio>
-        <span class="info">
-            <img @click="open = true"  src="/info.svg" width="30" height="30" alt="info icon">
-          </span>
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
-        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
-      </div>
-
+      <img class="main-landing-logo" src="/dphrt-big.svg">
     </div>
     <img
         class="portrait-mobile"
@@ -92,7 +74,25 @@ const heroText = [
         loading="lazy"
         alt="Image of Dean Pinkert"
     />
-    <span class="overlay"></span>
+    <div class="container__mobile--bio-cta-container">
+      <p>Dean Pinkert is an innovator in international trade and
+        human rights policy. Since departing from the
+        International Trade Commission (“ITC”) in 2017 after ten
+        years as a Commissioner (with two years as
+        presidentially designated Vice Chairman), his
+        involvement in public debate has included testimony
+        before the ITC and an interagency forced labor
+        committee, televised interviews, and publications on a
+        range of topics including human rights violations in
+        U.S.-facing supply chains.
+      </p>
+
+      <div class="container__mobile--cta-container">
+        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
+      </div>
+
+    </div>
     <div v-if="open" class="modal">
       <p>Hear Dean's story in his own words on the podcast below</p>
       <button @click="open = false">Close</button>
@@ -238,12 +238,57 @@ const heroText = [
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 
-    img {
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      object-fit: cover;
+
+
+    .container__main-branding {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .container__main-branding-text {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .main-landing-logo  {
+      width: 55px;
+      height: 55px;
+    }
+
+    .portrait-mobile {
+      height: 200px;
+      width: 200px;
+      justify-content: center;
+      display: flex;
+      align-self: center;
+    }
+
+    .container__left--hero-text-sentence:nth-child(1) {
+      color: #4D4397;
+      font-size: 25px;
+      font-weight: 500;
+      text-align: right;      }
+
+    .container__left--hero-text-sentence:nth-child(2) {
+      color:  #41A9DF;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .container__left--hero-text-sentence:nth-child(3) {
+      color:  #41A9DF;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 400;
     }
 
     .container__mobile--hero-text {
@@ -253,33 +298,15 @@ const heroText = [
         font-size: 60px;
         width: 100vw;
       }
-
-      .container__mobile--hero-text-sentence:nth-child(1) {
-        color: #6dcbdf;
-      }
-
-      .container__mobile--hero-text-sentence:nth-child(2) {
-        color: #eaeadd;
-        height: 65px;
-      }
-
-      .container__mobile--hero-text-sentence:nth-child(3) {
-        color: #fec452;
-      }
-
-      .container__mobile--hero-text-sentence:nth-child(4) {
-        color: #f65147;
-      }
     }
 
     .container__mobile--bio-cta-container {
       z-index: 2;
 
       p {
-        color: white;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
+        color: black;
         font-size: 14px;
-        padding: 3px 5px;
+        padding: 3px 25px;
       }
 
       audio {
