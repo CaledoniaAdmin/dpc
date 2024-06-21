@@ -5,46 +5,55 @@ const open = ref(false)
 
 const props = defineProps(['width'])
 
-  const heroText = [
-      'PINKERT TRADE',
-      '&',
-      'HUMAN RIGHTS',
-      'CONSULTING'
-  ]
+const heroText = [
+    'PINKERT',
+    'TRADE & HUMAN RIGHTS',
+    'CONSULTING'
+]
 
 </script>
 
 <template>
   <div class="container__desktop" v-if="props.width > 900">
     <div class="container__left">
-      <div class="container__left--hero-text">
-        <div class="container__left--hero-text-sentence" v-for="word in heroText">
-          <div class="">{{word}}</div>
+      <div class="container__main-branding">
+        <div class="container__main-branding-text">
+          <div class="container__left--hero-text-sentence" v-for="word in heroText">
+            <div class="">{{word}}</div>
+          </div>
         </div>
+        <img class="main-landing-logo" src="/dphrt-big.svg">
       </div>
+      <p class="container__bio--content">Dean Pinkert is an innovator in international trade and
+        human rights policy. Since departing from the
+        International Trade Commission (“ITC”) in 2017 after ten
+        years as a Commissioner (with two years as
+        presidentially designated Vice Chairman), his
+        involvement in public debate has included testimony
+        before the ITC and an interagency forced labor
+        committee, televised interviews, and publications on a
+        range of topics including human rights violations in
+        U.S.-facing supply chains.</p>
+      <div class="container__cta--desktop">
+        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
+      </div>
+    </div>
+    <div class="container__right">
       <img
           class="container__left--portrait"
           src="https://images.squarespace-cdn.com/content/v1/5810dda3e3df28ce37b58357/1635801209439-FFUCZLQKLS0TSL2CJ33G/signal-2021-11-01-160737_001.jpg?format=1000w"
           width="100%"
           loading="lazy"
-          height="100%"
           alt="Large image of Dean Pinkert"
       />
-    </div>
-    <div class="container__bio">
-      <p class="container__bio--content">An Innovator in international trade and human rights policy. Since departing from the
-        International Trade Commission (“ITC”) in 2017 after ten years as a Commissioner (with two
-        years as presidentially designated Vice Chairman), involvement in public debate has included
-        testimony before the ITC and an interagency forced labor committee, televised interviews, and
-        publications on a range of topics including human rights violations in U.S.-facing supply
-        chains.</p>
-      <div class="container__cta--desktop">
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
-        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
-      </div>
+<!--      <div class="container__cta&#45;&#45;desktop">-->
+<!--        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>-->
+<!--        <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>-->
+<!--      </div>-->
 
     </div>
-    <span class="overlay"></span>
+<!--    <span class="overlay"></span>-->
     <div v-if="open" class="modal">
       <p>Hear Dean's story in his own words on the podcast below</p>
       <button @click="open = false">Close</button>
@@ -93,35 +102,56 @@ const props = defineProps(['width'])
 
 <style scoped>
   .container__desktop {
-    min-height: 100vh;
-    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
 
     .container__left {
+      width: 40vw;
+      height: 100vw;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10%;
 
-      .container__left--hero-text {
-        position: absolute;
-        bottom: 5px;
-        height: 90vh;
-        width: 55vw;
-        z-index: 1;
-        margin: 0 0 0 15px;
-        font-size: 85px;
+      .container__main-branding {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 400;
+        font-style: normal;
       }
+
+      .main-landing-logo {
+        width: 125px;
+        height: 125px;
+      }
+
 
       .container__left--hero-text-sentence {
         font-size: 1em;
       }
 
       .container__left--hero-text-sentence:nth-child(1) {
-        color: #6dcbdf;
+        color: #4D4397;
+        font-size: 35px;
+        font-weight: 500;
+        text-align: right;
       }
 
       .container__left--hero-text-sentence:nth-child(2) {
-        color: #eaeadd;
+        color:  #41A9DF;
+        font-size: 22px;
+        font-weight: 400;
       }
 
       .container__left--hero-text-sentence:nth-child(3) {
-        color: #fec452;
+        color:  #41A9DF;
+        text-align: right;
+        font-size: 22px;
+        font-weight: 400;
       }
 
       .container__left--hero-text-sentence:nth-child(4) {
@@ -129,32 +159,27 @@ const props = defineProps(['width'])
       }
 
       .container__left--portrait {
-        width: 100%;
-        position: absolute;
-        height: 100%;
-        object-fit: cover;
+
       }
 
 
     }
 
-    .container__bio {
-      position: absolute;
-      margin: 35% 25px 0 0;
-      right: 0;
-      padding: 5px;
-      border-radius: 8px;
-      z-index: 2;
-      color: white;
-      font-weight: 100;
-      font-size: 16px;
-      width: 42vw;
-      line-height: 1.8em;
+    .container__right {
+      width: 60vw;
+      height: 100vh;
     }
 
     .container__bio--content {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
-      padding: 10px;
+      display: flex;
+      justify-content: end;
+      align-self: end;
+      width: 97%;
+      margin-top: 25%;
+      padding: 5px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8em
     }
 
     .container__cta--desktop {

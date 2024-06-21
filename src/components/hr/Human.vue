@@ -24,7 +24,7 @@ import humanData from '../../data/human.ts'
               <span class="title">{{image.title}}</span>
               <span><span class="source">{{image.source}}</span></span>
               <span class="linkout">Read More...</span>
-              <span v-if="image.audio" class="audio-banner">Here Dean tell his story below</span>
+              <span v-if="image.audio" class="audio-banner">Hear Dean's story: </span>
               <audio v-if="image.audio" controls>
                 <source src="https://audio.jukehost.co.uk/fHzavDGfQfonj9VuDlpnaUizgjZt9fm2">
               </audio>

@@ -121,7 +121,9 @@ onMounted(() => {
   <div v-if="width > 900" class="container__app--desktop">
     <div class="container__app--desktop--navbar-container">
       <div>
-        <div class="container__mast--desktop" @click="handleNavClick">PT&HRC</div>
+        <div class="container__mast--desktop" @click="handleNavClick">
+          <img src="/dphrt.svg" height="37" width="37">
+        </div>
       </div>
 
       <div>
@@ -187,7 +189,7 @@ onMounted(() => {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
   html {
     scroll-behavior: smooth;
     position: relative;
@@ -245,8 +247,9 @@ onMounted(() => {
       top: 0;
       z-index: 3;
       background: white;
-      font-family: Tahoma , sans-serif;
-      font-weight: 700;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     button {
