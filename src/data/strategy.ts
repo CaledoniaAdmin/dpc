@@ -24,6 +24,6 @@ export default [
         backgroundImg: 'https://caledoniaadmin.github.io/dpc/sean-pollock-PhYq704ffdA-unsplash.jpg',
         mediaType: '',
         payWall: '',
-        source: 'Today\'s General counsel'
+        source: 'Today\'sGeneralCounsel '
     }
 ]
