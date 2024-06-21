@@ -73,7 +73,7 @@ const handleNavClick = (e: Event) => {
       return scrollFn(baseHashVal * 4)
     }
     default:
-      setState('mast-desktop')
+      setState('')
       return scrollFn(0)
   }
 }
@@ -297,7 +297,7 @@ onMounted(() => {
       font-size: 20px !important;
       display: flex;
       align-items: center;
-      font-family: 'EB Garamond',sans-serif;
+      font-family: "Ubuntu", sans-serif;
 
 
       &.human, #human {
@@ -376,11 +376,40 @@ onMounted(() => {
       object-fit: contain;
     }
 
+
+    .trade {
+      .container__card--mobile {
+        border-bottom: 5px solid #41A9DF;
+
+      }
+    }
+
+    .agency {
+      .container__card--mobile {
+        border-bottom: 5px solid black;
+
+      }
+    }
+
+    .intellectual {
+      .container__card--mobile {
+        border-bottom: 5px solid #70C6BE;
+      }
+    }
+
+    .human {
+      .container__card--mobile {
+        border-bottom: 5px solid #4D4397;
+      }
+    }
+
+
     .container__card--mobile {
       position: relative;
       height: 25vh;
       overflow: hidden;
-      margin-bottom: 5px;
+
+
 
       .card {
         position: absolute;

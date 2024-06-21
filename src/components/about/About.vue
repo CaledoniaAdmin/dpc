@@ -260,8 +260,8 @@ const heroText = [
     }
 
     .main-landing-logo  {
-      width: 55px;
-      height: 55px;
+      width: 85px;
+      height: 85px;
     }
 
     .portrait-mobile {
@@ -338,6 +338,8 @@ const heroText = [
     .container__mobile--cta-container {
       display: flex;
       flex-direction: row;
+      gap: 35px;
+      justify-content: center;
 
       .info {
         width: 30px;
