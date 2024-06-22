@@ -284,7 +284,6 @@ onMounted(() => {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100%;
     position: relative;
 
     .header__section--mobile {
