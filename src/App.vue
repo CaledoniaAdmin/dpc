@@ -439,6 +439,13 @@ onMounted(() => {
 
     }
 
+    .container__footer--mobile {
+      color: white;
+      background-color: black;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
 
   }
 
