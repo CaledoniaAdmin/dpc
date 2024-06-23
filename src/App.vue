@@ -275,6 +275,7 @@ onMounted(() => {
     .container__footer--desktop {
       display: flex;
       justify-content: center;
+      font-family: "Ubuntu", sans-serif;
     }
 
   }
@@ -445,6 +446,9 @@ onMounted(() => {
       font-family: "Ubuntu", sans-serif;
       font-weight: 100;
       font-style: normal;
+      font-size: 10px;
+      display: flex;
+      justify-content: center;
     }
 
   }
