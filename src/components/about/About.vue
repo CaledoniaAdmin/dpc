@@ -55,7 +55,7 @@ const heroText = [
     </div>
 <!--    <span class="overlay"></span>-->
     <div v-if="open" class="modal">
-      <p>Contact us at pinkertconsulting.com</p>
+      <p>Contact us at <a href="mailto:pinkertconsulting@gmail.com">pinkertconsulting.com</a></p>
       <button @click="open = false">Close</button>
     </div>
   </div>
@@ -94,7 +94,7 @@ const heroText = [
 
     </div>
     <div v-if="open" class="modal">
-      <p>Contact us at pinkertconsulting.com</p>
+      <p>Contact us at <a href="mailto:pinkertconsulting@gmail.com">pinkertconsulting.com</a></p>
       <button @click="open = false">Close</button>
     </div>
   </div>
