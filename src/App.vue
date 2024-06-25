@@ -326,6 +326,13 @@ onMounted(() => {
       margin-left: 80%;
       bottom: 20px;
       z-index: 4;
+
+       > * {
+         background-color: #41A9DF;
+         color: white;
+         border-radius: 8px;
+
+       }
     }
 
     .contact {
