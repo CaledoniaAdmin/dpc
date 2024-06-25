@@ -35,7 +35,7 @@ const heroText = [
         range of topics including human rights violations in
         U.S.-facing supply chains.</p>
       <div class="container__cta--desktop">
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="mailto" @click="open = true"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
         <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
     </div>
@@ -55,7 +55,7 @@ const heroText = [
     </div>
 <!--    <span class="overlay"></span>-->
     <div v-if="open" class="modal">
-      <p>Hear Dean's story in his own words on the podcast below</p>
+      <p>Contact us at pinkertconsulting.com</p>
       <button @click="open = false">Close</button>
     </div>
   </div>
@@ -88,13 +88,13 @@ const heroText = [
       </p>
 
       <div class="container__mobile--cta-container">
-        <span class="mailto"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
+        <span class="mailto" @click="open = true"><a href="mailto:pinkertconsulting@gmail.com" target="_blank"><img src="/mail.svg" width="30" height="30" alt="mail icon"/></a></span>
         <span class="linkedin"><a href="https://www.linkedin.com/in/dean-pinkert/" target="_blank"><img src="/linkedin.svg" width="30" height="30" alt="linkedin icon"/></a></span>
       </div>
 
     </div>
     <div v-if="open" class="modal">
-      <p>Hear Dean's story in his own words on the podcast below</p>
+      <p>Contact us at pinkertconsulting.com</p>
       <button @click="open = false">Close</button>
     </div>
   </div>
@@ -393,15 +393,19 @@ const heroText = [
     top: 40%;
     left: 30%;
     width: 200px;
-    color: white;
+    color: #4D4397;
     padding: 20px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4));
+    border-radius: 16px;
+    background-color: white;
+    box-shadow:  2px 1px 6px 0 #949494;
 
     button {
       margin-left: 25%;
       margin-bottom: 10%;
       background-color: white;
-      color: black;
+      color: #41A9DF;
+      border-radius: 8px;
+      box-shadow:  2px 1px 6px 0 #949494;
     }
   }
 </style>
